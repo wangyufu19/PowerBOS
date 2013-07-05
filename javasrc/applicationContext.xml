@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--  
+		<bean id="dataSource" class="com.powerbos.framework.jdbc.datasource.JndiDatasourceFactory">
+		<property name="jndiName" value="java:comp/env/powerbos"/>
+		<property name="showSql" value="true" ></property>
+		</bean>-->
+	<!--通过JDBC连接数据库-->
+	<bean id="myDataSource"
+		class="com.powerbos.framework.jdbc.datasource.DriverManagerDatasource">
+		<property name="driverClass"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
+		<property name="username" value="powerbos" />
+		<property name="password" value="123456" />
+		<property name="dialect" value="oracle" />
+		<property name="showSql" value="true" />
+	</bean>
+	<bean id="jdbcSessionFactory"
+		class="com.powerbos.framework.jdbc.core.JdbcSessionFactory">
+		<property name="dataSource" ref="myDataSource"></property>
+	</bean>
+	<include resource="conf/bean/console-bean.xml"></include>
+	<include resource="conf/bean/support-bean.xml"></include>
+	<plugin
+		class="com.powerbos.framework.web.controller.ControllerLoaderPlugin">
+	</plugin>
+</configuration>

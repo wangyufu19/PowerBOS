@@ -1,0 +1,170 @@
+/*====================================================================
+Title : Global.css
+Author : wyf 
+URL : 
+Description : For login page
+Created : 2006-10-04
+Modified : wyf
+====================================================================*/
+@import url(global.css);
+@import url(table.css);
+body{
+	background:#DFDFDF;
+	margin:0;
+	padding:0;
+	overflow:auto;
+}
+/**/
+#container{
+	margin:100px auto;
+	padding:8px;
+	width:600px;
+	height:360px;
+	background:transparent url(../images/login_bg.jpg) center center no-repeat;
+}
+/*header*/
+#header{
+	padding:2px;
+	display:block;
+	height:60px;
+}
+#header #logo img{
+	background:transparent url(../images/logo.gif) center center no-repeat;
+	width:260px;
+	height:60px;
+}
+
+/*content*/
+#content{
+	background:transparent url(../images/login_banner.jpg) left top no-repeat;
+	border-top:4px solid #239A23;
+	border-bottom:4px solid #239A23;
+	display:block;
+	height:160px;
+}
+
+/*loginpanel*/
+#loginpanel{
+	margin-top:-33px;
+	margin-left:370px;
+	background:#FFFFFF;
+	border:1px solid #CCCCCC;
+	position:absolute;
+	width:220px;
+	height:240px;
+}
+#loginpanel .pheader{
+	background:#279A31 url(../images/login_pheader_bg.jpg) left top repeat-x;
+	height:28px;
+}
+#loginpanel .pheader h5{
+	margin:0 5px;
+	background:transparent url(../images/ico_login_user.gif) left center no-repeat;
+	padding-left:30px;
+	color:#FFFFFF;
+	font-size:13px;
+	font-weight:bold;
+	line-height:24px;
+	height:24px;
+}
+#loginpanel .sepline{
+	background:#FF9900 url(../images/login_sepline.jpg) center top repeat-y;
+	height:4px;
+	overflow:hidden;
+}
+#loginpanel .pcontent{
+	padding:5px 15px;
+}
+#loginpanel .pcontent label{
+	display:inline;
+}
+#loginpanel .pcontent label span{
+	font-family:"ËÎÌו";
+	font-size:12px;
+}
+#loginpanel .pcontent label label{
+	margin:1px;
+	height:20px;
+	display:inline;
+}
+#loginpanel .pcontent label.action{
+	margin-top:4px;
+	padding-left:45px;
+	float:left;
+	clear:both;
+}
+#loginpanel .pfooter{
+	margin:5px auto;
+	padding:5px 0;
+	border-top:1px dashed #CCCCCC;
+	width:90%;
+	clear:both;
+}
+#loginpanel .pfooter li{
+	background:transparent url(../images/ico_infogray_16.gif) left center no-repeat;
+	padding-left:20px;
+}
+#loginpanel #forgetpassword{
+}
+#loginpanel #loginerror{
+}
+/*---footer---*/
+#footer{
+	background:transparent url(../images/login_footer.jpg) left top no-repeat;
+	text-align:left;
+	height:128px;
+	clear:both;
+}
+#bottommenu{
+	width:100%;
+	height:100px;
+	overflow:hidden;
+}
+#copyright{
+	padding-left:10px;
+	color:#999999;
+	line-height:24px;
+	display:block;
+	float:left;
+}
+#powerdby{
+	margin-top:4px;
+	text-align:right;
+	padding-right:10px;
+}
+#powerdby img{
+	width:70px;
+	height:20px;
+	background:transparent url(../images/logo_pom.gif) left center no-repeat;
+}
+
+/*Form Contral*/
+.btn-login{
+	background:transparent url(../images/btn_login.gif) center top no-repeat;
+	border:none;
+	color:#FFFFFF;
+	font-weight:bold;
+	font-size:12px;
+	text-align:center;
+	width:60px;
+	height:22px;
+}
+.input{
+	margin:1px 0;
+	background:#FFFFFF;
+	color:#666666;
+	border:1px solid #7F9DB9;
+	padding:1px;
+	line-height:18px;
+	width:132px;
+	height:18px;
+}
+select{
+	background:#FFFFFF;
+	color:#666666;
+	border:1px solid #7F9DB9;
+	padding:1px;
+	line-height:18px;
+	width:132px;
+	height:18px;
+}

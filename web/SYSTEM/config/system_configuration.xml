@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="gbk"?>
+<configuration>
+  <!--产品基本信息-->
+  <product_info>
+    <!--产品名称 -->
+    <product_name>JAVA快速开发平台</product_name>
+    <!--版本信息-->
+    <version_num>V1.0</version_num>
+    <!--技术支持-->
+    <technology_corp>东蓝数码有限公司</technology_corp>
+    <!--版权公司-->
+    <copyright_corp>东蓝数码有限公司</copyright_corp>
+  </product_info>
+  <!--运行环境-->
+  <runtime_environment>
+    <!--运行容器-->
+    <runtime_server>tomcat</runtime_server>
+    <!--运行模式-->
+    <!--true:开发模式；false:部署模式-->
+    <runtime_mode>true</runtime_mode>
+  </runtime_environment>
+  <!--安全会话-->
+  <security_session>
+    <authentication>
+      <!--会话账号-->
+      <account>
+        <encrypted>true</encrypted>
+        <username>admin</username>
+        <password>96e79218965eb72c92a549dd5a330112</password>
+      </account>
+    </authentication>
+  </security_session>
+  <!--字符集编码-->
+  <charset_code>gbk</charset_code>
+  <!--系统调试日志-->
+  <!--true:开启日志；false:关闭日志-->
+  <debug_log>true</debug_log>
+  <!--验证会话限制-->
+  <!--true:单一会话；false:多个会话-->
+  <session_limit>false</session_limit>
+  <session_log />
+  <!--验证会话时间-->
+  <!--true:验证会话时间；false:不验证会话时间-->
+  <session_time>false</session_time>
+  <check_code>false</check_code>
+  <!--文件传输-->
+  <file_transaction>
+    <!--上传文件临时目录-->
+    <upload_path>/temp</upload_path>
+    <!--允许上传文件名称-->
+    <upload_allowable_extensions>zip,rar,doc,xls,txt,bmp,jpg,jpeg,gif</upload_allowable_extensions>
+  </file_transaction>
+</configuration>
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!--系统插件业务层-->
+	<bean id="sysPluginBizBean"
+		class="com.application.console.biz.SysPluginBiz">
+	</bean>
+
+	<bean id="jsp/console/login"
+		class="com.application.console.action.LoginAction">
+	</bean>
+	<bean id="jsp/console/logout"
+		class="com.application.console.action.LoginAction">
+	</bean>
+	<!--系统设置-->
+	<bean id="jsp/console/getSystemConfig"
+		class="com.application.console.action.SysConfigurationAction">
+	</bean>
+	<bean id="jsp/console/saveSysConfig"
+		class="com.application.console.action.SysConfigurationAction">
+	</bean>
+	<!--数据安装-->
+	<bean id="jsp/console/getSysDatabaseConfig"
+		class="com.application.console.action.SysDatabseConfigAction">
+	</bean>
+	<bean id="jsp/console/saveSysDatabaseConfig"
+		class="com.application.console.action.SysDatabseConfigAction">
+	</bean>
+
+	<!--系统插件控制层-->
+	<bean id="jsp/console/getSystemPluginList"
+		class="com.application.console.action.SysPluginAction">
+		<property name="sysPluginBiz" ref="sysPluginBizBean"></property>
+	</bean>
+	<bean id="jsp/console/getAddSysPlugin"
+		class="com.application.console.action.SysPluginAction">
+	</bean>
+	<bean id="jsp/console/addSysPlugin"
+		class="com.application.console.action.SysPluginAction">
+	</bean>
+	<bean id="jsp/console/getUpdateSysPlugin"
+		class="com.application.console.action.SysPluginAction">
+	</bean>
+	<bean id="jsp/console/updateSysPlugin"
+		class="com.application.console.action.SysPluginAction">
+	</bean>
+	<bean id="jsp/console/deleteSysPlugin"
+		class="com.application.console.action.SysPluginAction">
+	</bean>
+</configuration>

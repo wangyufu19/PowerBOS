@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGURATION>
+  <OIS_MY_INFO pageLocal="我的事务|个人资料" mimeType="normal" loadSearchWidget="" loadGridWidget="" loadFormWidget="true" loadScriptWidget="">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </GRID>
+    <FORM formTitle="个人资料" loadDataSetStyle="" loadColumnSetStyle="double">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.User" resultMap="userResult">
+          <SELECT><![CDATA[select user_name,login_name,user_type,user_status,email,mobile_phone,tele_phone from sm_t_user where id=$id$]]></SELECT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.getSession(USERID)" />
+          </INPUTBEAN>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="userName" chineseName="用户名称" value="obj.get(userName)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="loginName" chineseName="登录名称" value="obj.get(loginName)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="userType" chineseName="用户类型" value="obj.get(userType)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="fun.getDict(002)" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="userStatus" chineseName="用户状态" value="obj.get(userStatus)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="fun.getDict(003)" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="email" chineseName="邮箱地址" value="obj.get(email)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="mobilePhone" chineseName="手机号码" value="obj.get(mobilePhone)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="telePhone" chineseName="电话号码" value="obj.get(telePhone)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+      </COLUMNSET>
+      <ACTIONS />
+    </FORM>
+    <SCRIPT />
+  </OIS_MY_INFO>
+</CONFIGURATION>
+

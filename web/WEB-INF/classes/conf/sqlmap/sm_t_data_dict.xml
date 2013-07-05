@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GB2312"?>
+<metadata>
+  <alias name="dataDict" class="com.application.support.model.DataDict"></alias>
+  <sqlMap>
+    <resultMap name="dataDictResult" table="sm_t_data_dict" useQueryCache="true">
+      <id name="id" type="java.lang.String">
+        <column name="ID" length="128" key="uuid"/>
+      </id>
+      <property name="dictParentId" type="java.lang.String">
+        <column name="DICT_PARENT_ID" length="128" />
+      </property>
+      <property name="dictCode" type="java.lang.String">
+        <column name="DICT_CODE" length="64" />
+      </property>
+      <property name="dictName" type="java.lang.String">
+        <column name="DICT_NAME" length="128" />
+      </property>
+      <property name="orderNo" type="java.lang.Long">
+        <column name="ORDER_NO" length="1" scale="0"/>
+      </property>
+    </resultMap>
+  </sqlMap>
+</metadata>
+    

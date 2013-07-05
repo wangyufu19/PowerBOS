@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gbk"?>
+<configuration>
+  <!--数据库设置-->
+  <database_set>
+    <dialect>oracle</dialect>
+    <driver>oracle.jdbc.driver.OracleDriver</driver>
+    <url>jdbc:oracle:thin:@127.0.0.1:1521:orcl</url>
+    <username>powerbos</username>
+    <password>123456</password>
+  </database_set>
+</configuration>
+

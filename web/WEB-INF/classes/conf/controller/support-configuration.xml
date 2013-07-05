@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config> 
+  <actions>  
+    <action name="jsp/support/login" class="com.application.support.action.LoginAction" method="login"/>
+    <action name="jsp/support/logout" class="com.application.support.action.LoginAction" method="logout"/>    
+    <!--动态页面-->
+    <action name="jsp/support/submitDynPageAction" class="com.application.console.action.DynamicPageAction" method="submitDynPageAction"/>
+    <action name="jsp/support/loadDynPageData" class="com.application.console.action.DynamicPageAction" method="loadDynPageData"/>
+   	<action name="jsp/support/loadSelectEditor" class="com.application.console.DynamicPageAction" method="loadSelectEditor"/>    
+    
+    <action name="jsp/support/getChildOrgTree" class="com.application.support.action.OrgMgrAction" method="getChildOrgTree">
+       <result name="success">/jsp/support/xtree_org.jsp</result>
+    </action>
+    <action name="jsp/support/getChildFunTree" class="com.application.support.action.FunMgrAction" method="getChildFunTree">
+       <result name="success">/jsp/support/xtree_fun.jsp</result>
+    </action>  
+    <action name="jsp/support/getChildDataDictTree" class="com.application.support.action.DataDictAction" method="getChildDataDictTree">
+       <result name="success">/jsp/support/xtree_dict.jsp</result>
+    </action>  
+    <action name="jsp/support/checkOrgCode" class="com.application.support.action.OrgMgrAction" method="checkOrgCode"/>
+    <action name="jsp/support/checkOrgName" class="com.application.support.action.OrgMgrAction" method="checkOrgName"/>
+    <action name="jsp/support/checkUserName" class="com.application.support.action.UserMgrAction" method="checkUserName"/>
+    <action name="jsp/support/checkLoginName" class="com.application.support.action.UserMgrAction" method="checkLoginName"/>
+    <action name="jsp/support/checkRoleCode" class="com.application.support.action.RoleMgrAction" method="checkRoleCode"/>
+    <action name="jsp/support/getFunOrderNumber" class="com.application.support.action.FunMgrAction" method="getFunOrderNumber"/>
+    <action name="jsp/support/checkFunCode" class="com.application.support.action.FunMgrAction" method="checkFunCode"/>
+    <action name="jsp/support/checkFunName" class="com.application.support.action.FunMgrAction" method="checkFunName"/>    
+    <action name="jsp/support/getDictOrderNumber" class="com.application.support.action.DataDictAction" method="getDictOrderNumber"/>
+    <action name="jsp/support/checkDictCode" class="com.application.support.action.DataDictAction" method="checkDictCode"/>
+  </actions>
+</config>
+  

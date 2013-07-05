@@ -1,0 +1,525 @@
+/*====================================================================
+Title : Global.css
+author : Nick 
+URL : 
+Description : Just for index page
+Created : 2006-10-04
+Modified : 
+====================================================================*/
+
+/*---header---*/
+#header{
+	margin:0;
+	float:left;
+	background:#FFFFFF url(../images/header_bg.jpg) left bottom repeat-x;
+}
+#topmenu{
+	text-align:right;
+	width:auto;
+	float:right;
+	background:#A8C4E9 url(../images/topmenu_bg.jpg) left top repeat-y;
+}
+#topmenu ul{
+	margin:2px;
+}
+#topmenu li{
+	margin:0 5px;
+	padding-left:20px;
+	line-height:20px;
+	float:left;
+	background:transparent url(../images/ico_arrow_green_16.gif) left center no-repeat;
+}
+li#webhome{
+	background-image:url(../images/ico_home_16.gif);
+}
+li#message{
+	background-image:url(../images/ico_newmessage_16.gif);
+}
+li#profile{
+	background-image:url(../images/ico_profile_16.gif);
+}
+li#pass{
+	background-image:url(../images/ico_password_16.gif);
+}
+li#skins{
+	background-image:url(../images/ico_skins_16.gif);
+}
+li#feedback{
+	background-image:url(../images/ico_chat_16.gif);
+}
+li#setup{
+	background-image:url(../images/ico_setting_16.gif);
+}
+li#help{
+	background-image:url(../images/ico_help_16.gif);
+}
+li#quit{
+	background-image:url(../images/ico_quit_16.gif);
+}
+#topmenu li a{
+	color:#666666;
+}
+#topmenu li a:hover{
+	color:#FF0000;
+}
+
+#toplogo{
+	margin:0;
+	width:260px;
+	background:transparent url(../images/logo.gif) left center no-repeat;
+	float:left;
+}
+#toplogo img{
+	width:260px;
+	height:56px;
+}
+#desc{
+	width:auto;
+	height:16px;
+	line-height:16px;
+	margin-left:260px;
+	white-space:nowrap;
+	text-align:left;
+	clear:right;
+}
+#hello{
+	width:auto;
+	height:18px;
+}
+#username{
+	padding:0 10px 0 30px;
+	white-space:nowrap;
+	line-height:18px;
+	float:right;
+	background:transparent url(../images/ico_hello_16.gif) left bottom no-repeat;
+}
+#username span{
+	color:#FF6600;
+	font-weight:bold;
+}
+
+/*Menubar*/
+#menubar{
+	width:100%;
+	white-space:nowrap;
+	display:block;
+	float:left;
+	clear:both;
+	border-bottom:2px solid #86EB43;
+	background:transparent /*#2F6aBC*/ url(../images/menubar_bg.jpg) left bottom repeat-x;
+}
+#menubar ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#menubar li{
+	display:inline;
+	margin:0 1px;
+	padding:6px 0 0 0;
+	height:26px;
+	float:left;
+}
+#menubar li.left{
+	margin:0 2px;
+	padding:0;
+	width:10px;
+	height:32px;
+	background:transparent url(../images/menubar_left.gif) center center no-repeat;
+}
+#menubar li.seperater{
+	width:0px;
+	height:20px;
+	background:transparent;
+}
+#menubar a{
+	float:left;
+	background:url(../images/menu_left.gif) no-repeat left top;
+	margin:0;
+	padding:0 0 0 5px;
+	text-decoration:none;
+}
+#menubar a span{
+	float:left;
+	display:block;
+	letter-spacing:2px;
+	background:url(../images/menu_right.gif) no-repeat right top;
+	padding:8px 10px 4px 5px;
+	color:#FFF;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menubar a span{
+	color:#333;
+	float:none;
+}
+/* End IE5-Mac hack */
+#menubar a:hover span{
+	color:#FFF;
+}
+#menubar a:hover{
+	background-position:0% -26px;
+}
+#menubar a:hover span{
+	background-position:100% -26px;
+}  
+
+/* Selected Menu */
+#menubar .selected a span{
+	color:#FFF;
+}
+#menubar .selected a{
+	background-position:0% -26px;
+}
+#menubar .selected a span{
+	background-position:100% -26px;
+}  
+
+/* More Button */
+#menubar .more a{
+	float:left;
+	margin:6px 0 0 0;
+	padding:0;
+	text-decoration:none;
+	width:16px;
+	height:16px;
+	background:url(../images/menu_more.gif) no-repeat center top;
+}
+#menubar .more a span{
+	float:left;
+	padding:0;
+	display:block;
+	text-indent:-9999px;
+	background:none;
+}
+
+#menubar .more a:hover{
+	background-position:0% -16px;
+}
+#menubar .more a:hover span{
+	background-position:100% -16px;
+}
+
+/* System Navigation */
+#sysnav{
+	padding-right:5px;
+	float:right;
+}
+#sysnav a{
+	margin:6px 0 0 0;
+	padding:0;
+	width:150px;
+	display:block;
+	border:1px solid #306CBE;
+	text-decoration:none;
+	background:#4E81C8 url(../images/sysnav_bg.jpg) center center repeat-x;
+}
+#sysnav a span{
+	color:#B7CBE8;
+	padding:1px;
+	padding-left:4px;
+	line-height:15px;
+	padding-right:30px;
+	border:1px solid #8EB4E6;
+	background:transparent url(../images/sysnav_arrow.gif) right top no-repeat;
+}
+#sysnav a:hover{
+	color:#FFFFFF;
+	text-decoration:none;
+	border:1px solid #a2E539;
+	background:#5aC515;
+}
+#sysnav a:hover span{
+	border:1px solid #5aC515;
+	background-position:100% -18px;
+}
+/*==Sysnav DropdownMenu==*/
+#sysnav ul{
+	margin:0;
+	margin-left:-150px;
+	margin-top:27px;
+	padding:0;
+	width:150px;
+	display:block;
+	position:absolute;
+	z-index:1000;
+	border:1px solid #272a36;
+	background-color:#272a36;
+}
+#sysnav li{
+	margin:0;
+	padding:0;
+}
+#sysnav li.top,
+#sysnav li.bottom{
+	display:none;
+}
+#sysnav li a{
+	width:100%;
+	margin:0;
+	padding:0;
+	padding-left:10px;
+	border:0;
+	text-decoration:none;
+	background:#4E81C8;
+	background-color:#272a36;
+	background-image:none;
+}
+#sysnav li a:hover{
+	margin:0;
+	border:0;
+	text-decoration:none;
+	background-color:#4ECA02;
+	background-image:none;
+}
+#sysnav li a span,
+#sysnav li a:hover span{
+	margin:0;
+	padding:0;
+	color:#999999;
+	border:0;
+	line-height:20px;
+	background-color:transparent;
+	background-image:none;
+}
+#sysnav li a:hover span{
+	color:#FFFFFF;
+}
+/*==QuickMenu==*/
+
+#quickmenu{
+	width:100%;
+	white-space:nowrap;
+	display:block;
+	float:left;
+	clear:both;
+	border-bottom:1px solid #CCCCCC;
+	background:transparent url(../images/quickmenu_bg.jpg) left bottom repeat-x;
+}
+#quickmenu ul{
+	margin:2px 0;
+	padding:2px 10px 0 10px;
+	list-style:none;
+}
+#quickmenu li{
+	display:inline;
+	margin:0;
+	padding:0;
+	float:left;
+	background:transparent url(../images/quickmenu_sep.gif) right center no-repeat;
+}
+#quickmenu li.qmtitle{
+	padding:2px 0;
+	background:none;
+}
+#quickmenu a{
+	float:left;
+	margin:2px 10px 2px 10px;
+	padding:0;
+	text-decoration:none;
+}
+#quickmenu a span{
+	float:left;
+	display:block;
+	margin:0;
+	padding:0;
+	color:#666;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#quickmenu a span{
+	float:none;
+}
+/* End IE5-Mac hack */
+#quickmenu a:hover span{
+	color:#F60;
+}
+#quickmenu a:hover{
+}
+#quickmenu a:hover span{
+}  
+
+/**/
+
+
+/*---Content---*/
+.resizeLayerBorder{
+	width:8px;
+	height:auto;
+	float:left;
+	cursor:e-resize;
+	background:#FFFFFF url(../images/resizeborder_bg.gif) 1px 40px no-repeat;
+}
+.resizeLayerBorder img{
+	width:7px;
+	height:30px;
+	margin-top:200px;
+	margin-bottom:200px;
+}
+
+#resizeLayer{
+	border-right: #333 1px solid;
+	border-top: #333 1px solid;
+	border-left: #333 1px solid;
+	border-bottom: #333 1px solid;
+	filter: alpha(Opacity=50);
+	position: absolute;
+	z-index: 10;
+	top: -1000px;
+	left: -1000px;
+	background-color: #fff;
+	moz-opacity: 0.5;
+}
+/*---footer---*/
+#footer{
+	background:#D7E1F0 url(../images/footer_bg.gif) left top repeat-x;
+	border-top:1px solid #ECECEC;
+	text-align:left;
+	height:30px;
+	clear:both;
+}
+#bottommenu{
+	width:100%;
+	height:2px;
+	border-top:1px solid #FFFFFF;
+	overflow:hidden;
+}
+#copyright{
+	padding-left:10px;
+	color:#999999;
+	line-height:24px;
+	float:left;
+}
+#about{
+	margin-top:2px;
+	text-align:left;
+	padding-right:10px;
+	float:right;
+}
+#about img{
+	width:22px;
+	height:22px;
+	background:transparent url(../images/ico_powerbos_16.gif) center center no-repeat;
+}
+#aboutbos{
+	width:210px;
+	height:100px;
+	right:4px;
+	bottom:24px;
+	position:absolute;
+	z-index:100;
+	filter: alpha(opacity=75);
+}
+#aboutbos .closer{
+	position:absolute;
+	top:5px;
+	right:5px;
+	width:16px;
+	height:16px;
+	cursor:pointer;
+	background:transparent url(../images/ico_close_16.gif) left top no-repeat;	
+}
+#aboutbos ul{
+	padding:10px;
+	border:1px solid #96E75A;
+	background-color:#E7FFC8;
+}
+#aboutbos li{
+	font-family:ËÎÌו;
+	line-height:18px;
+}
+#aboutbos #arrowlayer{
+	margin-top:-1px;
+	margin-right:10px;
+	float:right;
+	width:20px;
+	height:12px;
+	overflow:hidden;
+	background:transparent url(../images/popup_arrow.gif) left top repeat;
+}
+
+/*---sidebar---*/
+#sidebar{
+	margin:0px;
+}
+#treeloading{
+	margin:5px;
+	margin-top:25px;
+	position:absolute;
+	z-index:1000;
+	top:50%;
+	width:90%;
+	border:1px solid #41BB22;
+	background:#A5F288 url(../images/loading_bg.jpg) top left repeat-x;
+}
+#treeloading .text{
+	margin:0 10px;
+	padding-left:20px;
+	width:auto;
+	color:#000000;
+	font-size:12px;
+	text-align:left;
+	line-height:30px;
+	display:block;
+	background:transparent url(../images/progress2.gif) center left no-repeat;
+}
+#treeloading .progressbar{
+	display:none;
+}
+
+#sidebar a{
+	text-decoration:none;
+}
+#sidebar li{
+	font-weight:normal;
+	line-height:20px;
+}
+#sidebar li.Folder{
+	line-height:26px;
+	background:transparent url(../images/leftmenu_title_l.gif) no-repeat left top;
+}
+#sidebar li.Folder span{
+	display:block;
+	margin-left:20px;
+	background:transparent url(../images/leftmenu_title_r.gif) repeat-x right top;
+}
+#sidebar li.Folder .titletxt{
+	color:#666;
+	font-weight:bold;
+}
+#sidebar li ul{
+	margin:0;
+	border:none;
+	background-color:#4772AB;
+}
+#sidebar li li{
+	margin:0;
+	color:#CDDCF1;
+	border-bottom:1px solid #C3CDDB;
+	background-color:#4772AB;
+}
+#sidebar li li span{
+	margin-left:0px;
+	padding-left:0;
+	background-image:none !important;
+}
+#sidebar li li a{
+	display:block;
+	color:#CDDCF1;
+	text-decoration:none;
+	padding-left:0px;
+	background:#4772AB url(../images/ico_arrow_green_16.gif) no-repeat left center;
+}
+#sidebar li li a:hover{
+	color:#99FF00;
+	text-decoration:none;
+	background:#1D4C8D url(../images/ico_arrow_green_16.gif) no-repeat left center;
+}
+
+#sidebar_bottom{
+	line-height:25px;
+	background:transparent url(../images/leftmenu_bottom_l.gif) no-repeat left bottom;
+}
+#sidebar_bottom span{
+	display:block;
+	margin-left:20px;
+	background:transparent url(../images/leftmenu_bottom_r.gif) repeat-x right bottom !important;
+}

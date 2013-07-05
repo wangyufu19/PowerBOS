@@ -1,0 +1,76 @@
+﻿.alerttxt{
+	color:#FF6600;
+	font-weight:bold;
+}
+.popup{
+	position:absolute;
+	z-index:9999;
+	margin:auto;
+	background:#FFFFFF;
+	border:1px solid #DDDDDD;
+	width:400px;
+}
+.popup .closer{
+	position:absolute;
+	top:4px;
+	right:4px;
+	width:16px;
+	height:16px;
+	cursor:pointer;
+	background:transparent url(../images/ico_close_16.gif) left top no-repeat;	
+}
+.popup .title{
+	margin:0;
+	padding:0;
+	padding-left:24px;
+	background:#EFEFEF url(../images/ico_alert_16.gif) 4px 3px no-repeat;
+	border:1px solid #FFF;
+	color:#666666;
+	font-weight:bold;
+	line-height:24px;
+	height:24px;
+	cursor:move;
+}
+.popup .content{
+	margin:10px;
+	padding:0;
+	background:transparent url(../images/ico_error_48.jpg) 10px 0px no-repeat;
+	font-size:14px;
+	padding-left:80px;
+	line-height:20px;
+	height:50px;
+}
+.popup .action{
+	margin:10px;
+	text-align:left;
+	padding-left:120px;
+	height:24px;
+}
+
+#login .title{
+	background:#EFEFEF url(../images/ico_alert_16.gif) 4px 3px no-repeat;
+}
+#login .content{
+	background:transparent url(../images/ico_user_48.jpg) 10px 0px no-repeat;
+}
+
+#error .title{
+	background:#EFEFEF url(../images/ico_alert_16.gif) 4px 3px no-repeat;
+}
+#error .content{
+	background:transparent url(../images/ico_error_48.jpg) 10px 0px no-repeat;
+}
+
+#info .title{
+	background:#EFEFEF url(../images/ico_info_16.gif) 4px 3px no-repeat;
+}
+#info .content{
+	background:transparent url(../images/ico_info_48.jpg) 10px 0px no-repeat;
+}
+
+#building .title{
+	background:#EFEFEF url(../images/ico_info_16.gif) 4px 3px no-repeat;
+}
+#building .content{
+	background:transparent url(../images/ico_building_48.jpg) 10px 0px no-repeat;
+}

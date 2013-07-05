@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIGURATION name="用户管理" createTime="2013-02-25 19:33">
+  <OIS_USER_LIST pageLocal="系统管理|用户管理" mimeType="normal" loadSearchWidget="true" loadGridWidget="true" loadFormWidget="" loadScriptWidget="">
+    <SEARCH searchTitle="查询条件" loadColumnSetStyle="">
+      <COLUMNSET>
+        <COLUMN name="userName_s" chineseName="用户名称" value="fun.get(userName_s)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+      </COLUMNSET>
+    </SEARCH>
+    <GRID gridTitle="用户信息列表" loadDataSetStyle="statement" loadLinkToolbar="true" loadHandleToolbar="" loadPageToolbar="true" pageFetchSize="">
+      <DATASET>
+        <STATEMENT parameterClass="com.application.support.model.User" returnClass="com.application.support.model.User" resultMap="userResult">
+          <SELECT><![CDATA[select id,user_name,login_name,user_type,user_status,email,mobile_phone,
+tele_phone from sm_t_user where org_id in(select id from sm_t_org where org_code_tree like (select org_code_tree from sm_t_org where id=$orgId$)||'%') and is_valid=1]]></SELECT>
+          <ORDERBY />
+          <INPUTBEAN>
+            <SETBEAN name="orgId" value="fun.get(parentId)" />
+            <SETBEAN name="userName" value="fun.get(userName_s)" />
+          </INPUTBEAN>
+          <WHERES>
+            <WHERE loadCondition="fun.get(userName_s)!="><![CDATA[user_name like '%$userName$%']]></WHERE>
+          </WHERES>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="id" chineseName="" value="obj.get(id)" dataType="" docType="checkbox" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="userName" chineseName="用户名称" value="obj.get(userName)" dataType="" docType="href" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" docHref="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_USER_ADD&amp;SHOW_TYPE=update&amp;id=obj.get(id)')" docOnclick="" docOnblur="" isEditor="">
+          <EDITOR editorDocType="" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="loginName" chineseName="登录名称" value="obj.get(loginName)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="">
+          <EDITOR docType="text" dataType="" docCss="" docMaxlength="" />
+        </COLUMN>
+        <COLUMN name="userType" chineseName="用户类型" value="obj.get(userType)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="fun.getDict(002)" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="" docOnclick="">
+          <EDITOR docType="select" dataType="" docCss="" docMaxlength="" editorDocType="select" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="userStatus" chineseName="用户状态" value="obj.get(userStatus)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="fun.getDict(003)" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="false" docHref="" docOnclick="">
+          <EDITOR docType="select" dataType="" docCss="" docMaxlength="" editorDocType="select" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="email" chineseName="电子邮箱" value="obj.get(email)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="" docOnclick="">
+          <EDITOR docType="text" dataType="" docCss="" docMaxlength="" editorDocType="text" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="mobilePhone" chineseName="手机号码" value="obj.get(mobilePhone)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="" docOnclick="">
+          <EDITOR docType="text" dataType="" docCss="" docMaxlength="" editorDocType="text" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="telePhone" chineseName="电话号码" value="obj.get(telePhone)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="" docOnclick="">
+          <EDITOR docType="text" dataType="" docCss="" docMaxlength="" editorDocType="text" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="showAdd" name="新增" loadCondition="" executeType="" href="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_USER_ADD&amp;SHOW_TYPE=add&amp;orgId=fun.get(parentId)')" onclick="" />
+        <ACTION code="delete" name="删除" loadCondition="" executeType="interface" href="javascript:doWith_f(fun.getSession(FORM),'delete','您确定要删除吗?','','id')" onclick="">
+          <STATEMENT />
+          <INPUTBEAN />
+          <INTERFACE className="com.application.support.plugin.UserMgrPi" methodName="deleteUser" />
+        </ACTION>
+      </ACTIONS>
+    </GRID>
+    <FORM>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </FORM>
+    <SCRIPT />
+  </OIS_USER_LIST>
+  <OIS_USER_ADD pageLocal="系统管理|用户管理" mimeType="normal" loadSearchWidget="" loadGridWidget="" loadFormWidget="true" loadScriptWidget="true">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </GRID>
+    <FORM formTitle="用户信息" loadDataSetStyle="statement" loadColumnSetStyle="double">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.User" resultMap="userResult">
+          <SELECT><![CDATA[select user_name,login_name,login_pwd,user_type,user_status,email,mobile_phone,
+tele_phone from sm_t_user where id=$id$]]></SELECT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="userName" chineseName="用户名称" value="obj.get(userName)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docHref="" docOnclick="" docOnblur="javascript:checkUserName();" />
+        <COLUMN name="loginName" chineseName="登录名称" value="obj.get(loginName)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docHref="" docOnclick="" docOnblur="javascript:checkLoginName();" />
+        <COLUMN name="loginPwd" chineseName="登录密码" value="obj.get(loginPwd)" dataType="string" docType="password" docCss="input" docWidth="" docHeight="" docMaxlength="64" loadCondition="fun.get(SHOW_TYPE)==add" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="userType" chineseName="用户类型" value="obj.get(userType)" dataType="number" docType="select" docCss="" docWidth="152" docHeight="" docMaxlength="3" loadCondition="" refFormula="fun.getDict(002)" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="userStatus" chineseName="用户状态" value="obj.get(userStatus)" dataType="number" docType="select" docCss="" docWidth="152" docHeight="" docMaxlength="3" loadCondition="" refFormula="fun.getDict(003)" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="email" chineseName="电子邮箱" value="obj.get(email)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="mobilePhone" chineseName="手机号码" value="obj.get(mobilePhone)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="32" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="telePhone" chineseName="电话号码" value="obj.get(telePhone)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="32" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="add" name="保存" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==add" executeType="interface" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'add','您确定要保存吗?')">
+          <INTERFACE className="com.application.support.plugin.UserMgrPi" methodName="addUser" />
+          <INPUTBEAN />
+          <STATEMENT />
+        </ACTION>
+        <ACTION code="update" name="更新" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==update" executeType="" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'update','您确定要保存吗?')">
+          <STATEMENT parameterClass="com.application.support.model.User" resultMap="userResult"><![CDATA[update sm_t_user set user_name=$userName$,login_name=$loginName$,
+user_type=$userType$,user_status=$userStatus$,email=$email$,
+mobile_phone=$mobilePhone$,tele_phone=$telePhone$ where id=$id$]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="userName" value="fun.get(userName)" />
+            <SETBEAN name="loginName" value="fun.get(loginName)" />
+            <SETBEAN name="userType" value="fun.get(userType)" />
+            <SETBEAN name="userStatus" value="fun.get(userStatus)" />
+            <SETBEAN name="email" value="fun.get(email)" />
+            <SETBEAN name="mobilePhone" value="fun.get(mobilePhone)" />
+            <SETBEAN name="telePhone" value="fun.get(telePhone)" />
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+          <INTERFACE />
+        </ACTION>
+        <ACTION code="close" name="关闭" freshOpener="" closeWindow="" loadCondition="" executeType="" href="" onclick="javascript:window.close();">
+          <INPUTBEAN />
+          <INTERFACE />
+          <STATEMENT />
+        </ACTION>
+      </ACTIONS>
+    </FORM>
+    <SCRIPT><![CDATA[function checkUserName(){  
+   var id=$("#id").val();
+   var userName=$("#userName").val();
+   $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/checkUserName.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{id:id,userName:userName},
+      success:function(msg){
+         if(msg!="成功"){
+            alert(msg);
+            $("#userName").focus();
+            return;
+         }
+      }
+   });
+   return true;
+}
+
+
+function checkLoginName(){  
+   var id=$("#id").val();
+   var loginName=$("#loginName").val();
+   $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/checkLoginName.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{id:id,loginName:loginName},
+      success:function(msg){
+         if(msg!="成功"){
+            alert(msg);
+            $("#loginName").focus();
+            return;
+         }
+      }
+   });
+   return true;
+}]]></SCRIPT>
+  </OIS_USER_ADD>
+</CONFIGURATION>
+

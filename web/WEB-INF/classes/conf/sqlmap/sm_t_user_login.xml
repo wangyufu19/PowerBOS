@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <alias name="userLogin" class="com.application.support.model.UserLogin"></alias>
+  <sqlMap>    
+    <resultMap name="userLoginResult" table="sm_t_user_login">
+      <id name="id" type="java.lang.String">
+         <column name="ID" length="128" key="uuid"/>                             
+      </id>      
+      <property name="userId" type="java.lang.String">
+        <column name="USER_ID" length="128"/>
+      </property>     
+      <property name="ipAddress" type="java.lang.String">
+        <column name="IP_ADDRESS" length="64"/>
+      </property>
+      <property name="sessionId" type="java.lang.String">
+        <column name="SESSION_ID" length="128"/>
+      </property>
+      <property name="lastLoginTime" type="java.sql.Timestamp">
+        <column name="LAST_LOGIN_TIME" length="7"/>
+      </property>
+      <property name="isOnline" type="java.lang.Long">
+        <column name="IS_ONLINE" length="1"/>
+      </property>     
+    </resultMap>    
+  </sqlMap>
+</metadata>
+  

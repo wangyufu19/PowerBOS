@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312"?>
+<metadata>
+	<alias name="dbLog"	class="com.application.support.model.DBLog"></alias>
+	<sqlMap>
+		<resultMap name="dbLogResult" table="sm_t_db_log" useQueryCache="true">
+			<id name="id" type="java.lang.String">
+				<column name="ID" length="128" key="uuid" />
+			</id>
+			<property name="content" type="java.lang.String">
+				<column name="CONTENT" length="1042" />
+			</property>
+			<property name="actionType" type="java.lang.String">
+				<column name="ACTION_TYPE" length="16" />
+			</property>
+			<property name="logTime" type="java.sql.Timestamp">
+				<column name="LOG_TIME"/>
+			</property>
+		</resultMap>		
+	</sqlMap>
+</metadata>

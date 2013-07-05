@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="GB2312"?>
+<metadata>
+  <alias name="user" class="com.application.support.model.User"></alias>
+  <sqlMap>    
+    <resultMap name="userResult" table="sm_t_user">
+      <id name="id" type="java.lang.String">
+         <column name="ID" length="128" key="uuid"/>                             
+      </id> 
+      <property name="userName" type="java.lang.String">
+        <column name="USER_NAME" length="64"/>
+      </property>
+      <property name="loginName" type="java.lang.String">
+        <column name="LOGIN_NAME" length="64"/>
+      </property>
+      <property name="loginPwd" type="java.lang.String">
+        <column name="LOGIN_PWD" length="64"/>
+      </property>
+      <property name="userType" type="java.lang.Integer">
+        <column name="USER_TYPE" length="1"/>
+      </property>
+      <property name="userStatus" type="java.lang.Integer">
+        <column name="USER_STATUS" length="1"/>
+      </property>
+      <property name="orgId" type="java.lang.String">
+        <column name="ORG_ID" length="128"/>
+      </property>      
+      <property name="isOnline" type="java.lang.Integer">
+        <column name="IS_ONLINE" length="1"/>
+      </property>   
+      <property name="email" type="java.lang.String">
+        <column name="EMAIL" length="64"/>
+      </property>
+      <property name="msn" type="java.lang.String">
+        <column name="MSN" length="64"/>
+      </property>
+      <property name="mobilePhone" type="java.lang.String">
+        <column name="MOBILE_PHONE" length="32"/>
+      </property>
+      <property name="telePhone" type="java.lang.String">
+        <column name="TELE_PHONE" length="32"/>
+      </property>
+      <property name="postcode" type="java.lang.String">
+        <column name="POSTCODE" length="16"/>
+      </property>
+      <property name="cardType" type="java.lang.Integer">
+        <column name="CARD_TYPE" length="1" scale="0"/>
+      </property>
+      <property name="cardCode" type="java.lang.String">
+        <column name="CARD_CODE" length="32"/>
+      </property>
+      <property name="address" type="java.lang.String">
+        <column name="ADDRESS" length="256"/>
+      </property>
+      <property name="remark" type="java.lang.String">
+        <column name="REMARK" length="256"/>
+      </property>      
+      <property name="companyId" type="java.lang.String">
+        <column name="COMPANY_ID" length="128"/>
+      </property>   
+      <property name="siteId" type="java.lang.String">
+        <column name="SITE_ID" length="128"/>
+      </property>     
+      <property name="isAdmin" type="java.lang.Integer">
+        <column name="IS_ADMIN" length="1"/>
+      </property>          
+      <property name="createUserId" type="java.lang.String">
+        <column name="CREATE_USER_ID" length="128"/>
+      </property>
+      <property name="createDate" type="java.util.Date">
+        <column name="CREATE_DATE" length="7"  default="sysdate"/>
+      </property>
+      <property name="updateUserId" type="java.lang.String">
+        <column name="UPDATE_USER_ID" length="128"/>
+      </property>
+      <property name="updateDate" type="java.util.Date">
+        <column name="UPDATE_DATE" length="7"  default="sysdate"/>
+      </property>      
+    </resultMap>   
+  </sqlMap>
+</metadata>
+

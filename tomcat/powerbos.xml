@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context  path="" docBase="E:\workspace\powerbos\web" debug="5" reloadable="true">
+ <Resource
+      name="powerbos"
+      type="javax.sql.DataSource"
+      password="123456"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="2"
+      maxWait="50"
+      username="powerbos"
+      url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+      maxActive="4"/>
+	  <WatchedResource>WEB-INF/web.xml</WatchedResource> 
+
+	<!--Resource 
+	name="bos_mssql" 
+	type="javax.sql.DataSource" 
+	password="windows" 
+	driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
+	maxIdle="2" 
+	maxWait="5000" 
+	username="sa" 
+	url="jdbc:sqlserver://127.0.0.1:7433;DatabaseName=powerbos" 
+	maxActive="100"/>
+
+
+	
+
+	<Resource 
+	name="bos_db2" 
+	type="javax.sql.DataSource" 
+	password="windows" 
+	driverClassName="com.ibm.db2.jcc.DB2Driver" 
+	maxIdle="2" 
+	maxWait="5000" 
+	username="db2admin" 
+	url="jdbc:db2://127.0.0.1:50000/powerbos" 
+	maxActive="100"/>
+
+	
+
+	<Resource 
+	name="bos_informix" 
+	type="javax.sql.DataSource" 
+	password="windows" 
+	driverClassName="com.informix.jdbc.IfxDriver" 
+	maxIdle="2" 
+	maxWait="5000" 
+	username="db2admin" 	
+	url="jdbc:informix-sqli://123.45.67.89:1533/myDB:INFORMIXSERVER=myserver" 
+	maxActive="100"/>
+
+
+	<Resource 
+	name="bos_sybase" 
+	type="javax.sql.DataSource" 
+	password="windows" 
+	driverClassName="com.sybase.jdbc2.jdbc.SybDriver" 
+	maxIdle="2" 
+	maxWait="5000" 
+	username="db2admin" 	
+	url="jdbc:sybase:Tds:IP:2638?ServiceName=db" 
+	maxActive="100"/>
+	
+	
+
+	 
+
+	
+
+
+
+	<Resource 
+	name="bos_oracle" 
+	type="javax.sql.DataSource" 
+	password="windows" 
+	driverClassName="oracle.jdbc.driver.OracleDriver" 
+	maxIdle="2" 
+	maxWait="5000" 
+	username="powerbos" 
+	url="jdbc:oracle:thin:@202.75.223.249:1522:zglssc" 
+	maxActive="10"/>
+
+
+
+	<Resource 
+	name="bos1" 
+	type="javax.sql.DataSource" 
+	password="powerbid" 
+	driverClassName="oracle.jdbc.driver.OracleDriver" 
+	maxIdle="2" 
+	maxWait="5000" 
+	username="powerbid" 
+	url="jdbc:oracle:thin:@192.168.0.76:1521:test" 
+	maxActive="10"/-->
+
+</Context>
+
+

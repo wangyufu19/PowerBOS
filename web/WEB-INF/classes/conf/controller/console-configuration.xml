@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config> 
+  <global>
+    <results>     	         
+    </results>     
+  </global>
+  <actions>       
+    <action name="jsp/console/login" class="com.application.console.action.LoginAction" method="login"/>
+    <action name="jsp/console/logout" class="com.application.console.action.LoginAction" method="logout"/>    
+    <!--系统设置-->
+    <action name="jsp/console/getSystemConfig" class="com.application.console.action.SysConfigurationAction" method="getSystemConfig">
+      <result name="success">/jsp/console/sysconfig/system_config.jsp</result>
+    </action>
+    <action name="jsp/console/saveSysConfig" class="com.application.console.action.SysConfigurationAction" method="saveSysConfig">
+      <result name="success">/jsp/console/sysconfig/system_config.jsp</result>
+    </action>
+    <!--数据安装-->
+    <action name="jsp/console/getSysDatabaseConfig" class="com.application.console.action.SysDatabseConfigAction" method="getSysDatabaseConfig">
+      <result name="success">/jsp/console/sysconfig/database_config.jsp</result>
+    </action>
+    <action name="jsp/console/saveSysDatabaseConfig" class="com.application.console.action.SysDatabseConfigAction" method="saveSysDatabaseConfig">
+      <result name="success">/jsp/console/sysconfig/database_config.jsp</result>
+    </action>
+    <!--系统插件-->
+    <action name="jsp/console/getSystemPluginList" class="com.application.console.action.SysPluginAction">
+      <result name="success">/jsp/console/sysconfig/system_plugin_list.jsp</result>
+    </action>
+    <action name="jsp/console/getAddSysPlugin" class="com.application.console.action.SysPluginAction" method="getAddSysPlugin">
+      <result name="success">/jsp/console/sysconfig/system_plugin_add.jsp</result>
+    </action>
+    <action name="jsp/console/addSysPlugin" class="com.application.console.action.SysPluginAction" method="addSysPlugin">
+      <result name="success">/jsp/console/sysconfig/system_plugin_list.jsp</result>
+    </action>
+    <action name="jsp/console/getUpdateSysPlugin" class="com.application.console.action.SysPluginAction" method="getUpdateSysPlugin">
+      <result name="success">/jsp/console/sysconfig/system_plugin_edit.jsp</result>
+    </action>
+    <action name="jsp/console/updateSysPlugin" class="com.application.console.action.SysPluginAction" method="updateSysPlugin">
+      <result name="success">/jsp/console/sysconfig/system_plugin_list.jsp</result>
+    </action>
+     <action name="jsp/console/deleteSysPlugin" class="com.application.console.action.SysPluginAction" method="deleteSysPlugin">
+      <result name="success">/jsp/console/sysconfig/system_plugin_list.jsp</result>
+    </action>
+   
+    <!--页面资源-->
+    <action name="jsp/console/getPageResourceList" class="com.application.console.action.PageResourceAction">
+      <result name="success">/jsp/console/sysview/resource/page_resource_list.jsp</result>
+    </action>
+    <action name="jsp/console/getAddPageResource" class="com.application.console.action.PageResourceAction" method="getAddPageResource">
+      <result name="success">/jsp/console/sysview/resource/page_resource_add.jsp</result>
+    </action>
+    <action name="jsp/console/addPageResource" class="com.application.console.action.PageResourceAction" method="addPageResource">
+      <result name="success">/jsp/console/sysview/resource/page_resource_list.jsp</result>
+    </action>
+    <action name="jsp/console/deletePageResource" class="com.application.console.action.PageResourceAction" method="deletePageResource">
+      <result name="success">/jsp/console/sysview/resource/page_resource_list.jsp</result>
+    </action>
+    <!--页面模块-->
+    <action name="jsp/console/getPageModuleList" class="com.application.console.action.PageModuleAction">
+      <result name="success">/jsp/console/sysview/resource/page_module_list.jsp</result>
+    </action>
+    <action name="jsp/console/getAddPageModule" class="com.application.console.action.PageModuleAction" method="getAddPageModule">
+      <result name="success">/jsp/console/sysview/resource/page_module_add.jsp</result>
+    </action>
+    <action name="jsp/console/addPageModule" class="com.application.console.action.PageModuleAction" method="addPageModule">
+      <result name="success">/jsp/console/sysview/resource/page_module_list.jsp</result>
+    </action>
+    <action name="jsp/console/getUpdatePageModule" class="com.application.console.action.PageModuleAction" method="getUpdatePageModule">
+      <result name="success">/jsp/console/sysview/resource/page_module_edit.jsp</result>
+    </action>
+    <action name="jsp/console/updatePageModule" class="com.application.console.action.PageModuleAction" method="updatePageModule">
+      <result name="success">/jsp/console/sysview/resource/page_module_list.jsp</result>
+    </action>
+    <action name="jsp/console/deletePageModule" class="com.application.console.action.PageModuleAction" method="deletePageModule">
+      <result name="success">/jsp/console/sysview/resource/page_module_list.jsp</result>
+    </action>
+    <!--页面定制-->
+    <action name="jsp/console/getPageWidgetList" class="com.application.console.action.PageCustomizeAction">
+      <result name="success">/jsp/console/sysview/customize/page_widget_list.jsp</result>
+    </action>
+    <action name="jsp/console/getAddPageWidget" class="com.application.console.action.PageCustomizeAction" method="getAddPageWidget">
+      <result name="success">/jsp/console/sysview/customize/page_widget_add.jsp</result>
+    </action>
+    <action name="jsp/console/addPageWidget" class="com.application.console.action.PageCustomizeAction" method="addPageWidget">
+      <result name="success">/jsp/console/sysview/customize/page_widget_list.jsp</result>
+    </action>
+    <action name="jsp/console/getUpdatePageWidget" class="com.application.console.action.PageCustomizeAction" method="getUpdatePageWidget">
+      <result name="success">/jsp/console/sysview/customize/page_widget_edit.jsp</result>
+    </action>
+    <action name="jsp/console/updatePageWidget" class="com.application.console.action.PageCustomizeAction" method="updatePageWidget">
+      <result name="success">/jsp/console/sysview/customize/page_widget_edit.jsp</result>
+    </action>
+    <action name="jsp/console/deletePageWidget" class="com.application.console.action.PageCustomizeAction" method="deletePageWidget">
+      <result name="success">/jsp/console/sysview/customize/page_widget_list.jsp</result>
+    </action>
+    <action name="jsp/console/getPageCustomize" class="com.application.console.action.PageCustomizeAction" method="getPageCustomize">
+      <result name="success">/jsp/console/sysview/customize/page_customize.jsp</result>
+    </action>
+    <!--查询对象-->
+    <action name="jsp/console/getSearchObjectBase" class="com.application.console.action.SearchObjectAction" method="getSearchObjectBase">
+      <result name="success">/jsp/console/sysview/customize/search/search_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveSearchObjectBase" class="com.application.console.action.SearchObjectAction" method="saveSearchObjectBase">
+      <result name="success">/jsp/console/sysview/customize/search/search_base.jsp</result>
+    </action>
+    <!--查询字段集-->
+    <action name="jsp/console/getSearchColumnSetIframe" class="com.application.console.action.SearchColumnSetAction" method="getSearchColumnSetIframe">
+      <result name="success">/jsp/console/sysview/customize/search/search_columnset_iframe.jsp</result>
+    </action>
+    <action name="jsp/console/getSearchColumnSetList" class="com.application.console.action.SearchColumnSetAction" method="getSearchColumnSetList">
+      <result name="success">/jsp/console/sysview/customize/search/search_columnset_list.jsp</result>
+    </action>
+    <action name="jsp/console/saveSearchColumnSetList" class="com.application.console.action.SearchColumnSetAction" method="saveSearchColumnSetList">
+      <result name="success">/jsp/console/sysview/customize/search/search_columnset_list.jsp</result>
+    </action>
+    <action name="jsp/console/getSearchColumnSetAtt" class="com.application.console.action.SearchColumnSetAction" method="getSearchColumnSetAtt">
+      <result name="success">/jsp/console/sysview/customize/search/search_columnset_att.jsp</result>
+    </action>
+    <action name="jsp/console/saveSearchColumnSetAtt" class="com.application.console.action.SearchColumnSetAction" method="saveSearchColumnSetAtt">
+      <result name="success">/jsp/console/sysview/customize/search/search_columnset_att.jsp</result>
+    </action> 
+    <!--网格对象-->
+    <action name="jsp/console/getGridObjectBase" class="com.application.console.action.GridObjectAction" method="getGridObjectBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridObjectBase" class="com.application.console.action.GridObjectAction" method="saveGridObjectBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_base.jsp</result>
+    </action>
+    <!--网格数据集-->
+    <action name="jsp/console/getGridDataSetBase" class="com.application.console.action.GridDataSetAction" method="getGridDataSetBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_dataset_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridDataSetBase" class="com.application.console.action.GridDataSetAction" method="saveGridDataSetBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_dataset_base.jsp</result>
+    </action>
+    <!--网格语句对象-->
+    <action name="jsp/console/getGridStatementBase" class="com.application.console.action.GridStatementAction" method="getGridStatementBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridStatementBase" class="com.application.console.action.GridStatementAction" method="saveGridStatementBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_base.jsp</result>
+    </action> 
+    <action name="jsp/console/getGridStatementSelect" class="com.application.console.action.GridStatementAction" method="getGridStatementSelect">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_select.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridStatementSelect" class="com.application.console.action.GridStatementAction" method="saveGridStatementSelect">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_select.jsp</result>
+    </action>    
+    <action name="jsp/console/getGridStatementWhere" class="com.application.console.action.GridStatementAction" method="getGridStatementWhere">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_where.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridStatementWhere" class="com.application.console.action.GridStatementAction" method="saveGridStatementWhere">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_where.jsp</result>
+    </action>
+    <action name="jsp/console/getGridStatementOrderby" class="com.application.console.action.GridStatementAction" method="getGridStatementOrderby">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_orderby.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridStatementOrderby" class="com.application.console.action.GridStatementAction" method="saveGridStatementOrderby">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_orderby.jsp</result>
+    </action>
+    <action name="jsp/console/getGridStatementInput" class="com.application.console.action.GridStatementAction" method="getGridStatementInput">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_input.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridStatementInput" class="com.application.console.action.GridStatementAction" method="saveGridStatementInput">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_statement_input.jsp</result>
+    </action>
+    <!--网格外部接口-->
+    <action name="jsp/console/getGridInterfaceBase" class="com.application.console.action.GridInterfaceAction" method="getGridInterfaceBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_interface_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridInterfaceBase" class="com.application.console.action.GridInterfaceAction" method="saveGridInterfaceBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_interface_base.jsp</result>
+    </action>
+    <!--网格字段集-->
+    <action name="jsp/console/getGridColumnSetIframe" class="com.application.console.action.GridColumnSetAction" method="getGridColumnSetIframe">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_columnset_iframe.jsp</result>
+    </action>
+    <action name="jsp/console/getGridColumnSetList" class="com.application.console.action.GridColumnSetAction" method="getGridColumnSetList">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_columnset_list.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridColumnSetList" class="com.application.console.action.GridColumnSetAction" method="saveGridColumnSetList">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_columnset_list.jsp</result>
+    </action>
+    <action name="jsp/console/getGridColumnSetAtt" class="com.application.console.action.GridColumnSetAction" method="getGridColumnSetAtt">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_columnset_att.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridColumnSetAtt" class="com.application.console.action.GridColumnSetAction" method="saveGridColumnSetAtt">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_columnset_att.jsp</result>
+    </action>   
+    <!--网格工具条-->
+    <action name="jsp/console/getGridToolbarIframe" class="com.application.console.action.GridToolbarAction" method="getGridToolbarIframe">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_iframe.jsp</result>
+    </action>
+    <action name="jsp/console/getGridToolbarList" class="com.application.console.action.GridToolbarAction" method="getGridToolbarList">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_list.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridToolbarList" class="com.application.console.action.GridToolbarAction" method="saveGridToolbarList">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_list.jsp</result>
+    </action>
+    <action name="jsp/console/getGridToolbarBase" class="com.application.console.action.GridToolbarAction" method="getGridToolbarBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridToolbarBase" class="com.application.console.action.GridToolbarAction" method="saveGridToolbarBase">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_base.jsp</result>
+    </action>
+    <action name="jsp/console/getGridToolbarStatement" class="com.application.console.action.GridToolbarAction" method="getGridToolbarStatement">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_statement.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridToolbarStatement" class="com.application.console.action.GridToolbarAction" method="saveGridToolbarStatement">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_statement.jsp</result>
+    </action>
+    <action name="jsp/console/getGridToolbarInput" class="com.application.console.action.GridToolbarAction" method="getGridToolbarInput">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_input.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridToolbarInput" class="com.application.console.action.GridToolbarAction" method="saveGridToolbarInput">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_input.jsp</result>
+    </action>
+    <action name="jsp/console/getGridToolbarInterface" class="com.application.console.action.GridToolbarAction" method="getGridToolbarInterface">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_interface.jsp</result>
+    </action>
+    <action name="jsp/console/saveGridToolbarInterface" class="com.application.console.action.GridToolbarAction" method="saveGridToolbarInterface">
+      <result name="success">/jsp/console/sysview/customize/grid/grid_toolbar_interface.jsp</result>
+    </action>
+    <!--表单对象-->
+    <action name="jsp/console/getFormObjectBase" class="com.application.console.action.FormObjectAction" method="getFormObjectBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormObjectBase" class="com.application.console.action.FormObjectAction" method="saveFormObjectBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_base.jsp</result>
+    </action>      
+    <!--表单语句对象-->
+    <action name="jsp/console/getFormStatementBase" class="com.application.console.action.FormStatementAction" method="getFormStatementBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_statement_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormStatementBase" class="com.application.console.action.FormStatementAction" method="saveFormStatementBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_statement_base.jsp</result>
+    </action>
+    <action name="jsp/console/getFormStatementSelect" class="com.application.console.action.FormStatementAction" method="getFormStatementSelect">
+      <result name="success">/jsp/console/sysview/customize/form/form_statement_select.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormStatementSelect" class="com.application.console.action.FormStatementAction" method="saveFormStatementSelect">
+      <result name="success">/jsp/console/sysview/customize/form/form_statement_select.jsp</result>
+    </action>
+    <action name="jsp/console/getFormStatementInput" class="com.application.console.action.FormStatementAction" method="getFormStatementInput">
+      <result name="success">/jsp/console/sysview/customize/form/form_statement_input.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormStatementInput" class="com.application.console.action.FormStatementAction" method="saveFormStatementInput">
+      <result name="success">/jsp/console/sysview/customize/form/form_statement_input.jsp</result>
+    </action>
+     <!--表单外部接口-->
+    <action name="jsp/console/getFormInterfaceBase" class="com.application.console.action.FormInterfaceAction" method="getFormInterfaceBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_interface_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormInterfaceBase" class="com.application.console.action.FormInterfaceAction" method="saveFormInterfaceBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_interface_base.jsp</result>
+    </action>
+    <!--表单字段集-->
+    <action name="jsp/console/getFormColumnSetIframe" class="com.application.console.action.FormColumnSetAction" method="getFormColumnSetIframe">
+      <result name="success">/jsp/console/sysview/customize/form/form_columnset_iframe.jsp</result>
+    </action>
+    <action name="jsp/console/getFormColumnSetList" class="com.application.console.action.FormColumnSetAction" method="getFormColumnSetList">
+      <result name="success">/jsp/console/sysview/customize/form/form_columnset_list.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormColumnSetList" class="com.application.console.action.FormColumnSetAction" method="saveFormColumnSetList">
+      <result name="success">/jsp/console/sysview/customize/form/form_columnset_list.jsp</result>
+    </action>
+    <action name="jsp/console/getFormColumnSetAtt" class="com.application.console.action.FormColumnSetAction" method="getFormColumnSetAtt">
+      <result name="success">/jsp/console/sysview/customize/form/form_columnset_att.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormColumnSetAtt" class="com.application.console.action.FormColumnSetAction" method="saveFormColumnSetAtt">
+      <result name="success">/jsp/console/sysview/customize/form/form_columnset_att.jsp</result>
+    </action>
+    <!--表单工具条-->
+    <action name="jsp/console/getFormToolbarIframe" class="com.application.console.action.FormToolbarAction" method="getFormToolbarIframe">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_iframe.jsp</result>
+    </action>
+    <action name="jsp/console/getFormToolbarList" class="com.application.console.action.FormToolbarAction" method="getFormToolbarList">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_list.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormToolbarList" class="com.application.console.action.FormToolbarAction" method="saveFormToolbarList">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_list.jsp</result>
+    </action>
+    <action name="jsp/console/getFormToolbarBase" class="com.application.console.action.FormToolbarAction" method="getFormToolbarBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_base.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormToolbarBase" class="com.application.console.action.FormToolbarAction" method="saveFormToolbarBase">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_base.jsp</result>
+    </action>
+    <action name="jsp/console/getFormToolbarStatement" class="com.application.console.action.FormToolbarAction" method="getFormToolbarStatement">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_statement.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormToolbarStatement" class="com.application.console.action.FormToolbarAction" method="saveFormToolbarStatement">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_statement.jsp</result>
+    </action>
+    <action name="jsp/console/getFormToolbarInput" class="com.application.console.action.FormToolbarAction" method="getFormToolbarInput">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_input.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormToolbarInput" class="com.application.console.action.FormToolbarAction" method="saveFormToolbarInput">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_input.jsp</result>
+    </action>
+    <action name="jsp/console/getFormToolbarInterface" class="com.application.console.action.FormToolbarAction" method="getFormToolbarInterface">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_interface.jsp</result>
+    </action>
+    <action name="jsp/console/saveFormToolbarInterface" class="com.application.console.action.FormToolbarAction" method="saveFormToolbarInterface">
+      <result name="success">/jsp/console/sysview/customize/form/form_toolbar_interface.jsp</result>
+    </action>
+    <!--脚本对象-->
+    <action name="jsp/console/getScriptObjectContent" class="com.application.console.action.ScriptObjectAction" method="getScriptObjectContent">
+      <result name="success">/jsp/console/sysview/customize/script_content.jsp</result>
+    </action>
+    <action name="jsp/console/saveScriptObjectContent" class="com.application.console.action.ScriptObjectAction" method="saveScriptObjectContent">
+      <result name="success">/jsp/console/sysview/customize/script_content.jsp</result>
+    </action>
+  
+   </actions>  
+</config>

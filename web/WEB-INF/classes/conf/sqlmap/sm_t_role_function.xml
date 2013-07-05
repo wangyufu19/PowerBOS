@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<metadata>
+  <alias name="roleFunction" class="com.application.support.model.RoleFunction" ></alias>
+  <sqlMap>    
+    <resultMap name="roleFunctionResult" table="sm_t_role_function">
+      <id name="id" type="java.lang.String">
+         <column name="ID" length="128" key="uuid"/>                             
+      </id> 
+      <property name="roleId" type="java.lang.String">
+        <column name="ROLE_ID" length="128"/>
+      </property>
+      <property name="functionId" type="java.lang.String">
+        <column name="FUNCTION_ID" length="128"/>
+      </property>        
+    </resultMap>
+    
+    <select id="getRoleFunction" parameterClass="Long" resultMap="roleFunctionResult">
+       select a.id,a.function_parent_id,a.function_name,(case (select count(b.function_id)
+       from bos_t_role_function b where b.role_id=$roleId$ and b.function_id=a.id) when 1 then 1 else 0 end) as checked
+       from bos_t_function a order by a.id
+    </select>   
+    <insert id="insertRoleFunction" parameterClass="roleFunction" resultMap="roleFunctionResult">
+    	insert into bos_t_role_function(id,role_id,function_id) values($id$,$roleId$,$functionId$)
+    </insert> 
+    <delete id="deleteRoleFunction" parameterClass="Long" resultMap="roleFunctionResult">
+    	delete from bos_t_role_function where role_id=$id$
+    </delete> 
+  </sqlMap>
+</metadata>
+

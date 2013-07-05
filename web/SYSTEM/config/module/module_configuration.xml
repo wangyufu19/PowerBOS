@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configuration>
+  <module name="机构管理" resource="ois_org_manage.xml" />
+  <module name="用户管理" resource="ois_user_manage.xml" />
+  <module name="角色管理" resource="ois_role_manage.xml" />
+  <module name="权限管理" resource="ois_fun_manage.xml" />
+  <module name="字典管理" resource="ois_dict_manage.xml" />
+</configuration>
+

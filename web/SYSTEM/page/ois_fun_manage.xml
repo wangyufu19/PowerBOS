@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIGURATION name="权限管理" createTime="2013-02-25 19:33">
+  <OIS_FUN_LIST pageLocal="系统管理|权限管理" mimeType="normal" loadSearchWidget="" loadGridWidget="true" loadFormWidget="" loadScriptWidget="">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID gridTitle="权限信息列表" loadDataSetStyle="" loadLinkToolbar="true" loadHandleToolbar="" loadPageToolbar="" pageFetchSize="">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.Function" resultMap="funResult">
+          <SELECT><![CDATA[select id,function_code,function_name,function_type,order_no from sm_t_function where function_parent_id=$functionParentId$ and is_valid=1]]></SELECT>
+          <ORDERBY><![CDATA[order by order_no]]></ORDERBY>
+          <INPUTBEAN>
+            <SETBEAN name="functionParentId" value="fun.get(parentId)" />
+          </INPUTBEAN>
+          <WHERES />
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="id" chineseName="" value="obj.get(id)" dataType="" docType="checkbox" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="functionCode" chineseName="权限编码" value="obj.get(functionCode)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="functionName" chineseName="权限名称" value="obj.get(functionName)" dataType="" docType="href" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" docHref="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_FUN_ADD&amp;SHOW_TYPE=update&amp;id=obj.get(id)')" docOnclick="" docOnblur="" />
+        <COLUMN name="functionType" chineseName="权限类型" value="obj.get(functionType)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="fun.getDict(005)" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="orderNo" chineseName="排序号" value="obj.get(orderNo)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="showAdd" name="新增" loadCondition="" executeType="" href="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_FUN_ADD&amp;SHOW_TYPE=add&amp;parentId=fun.get(parentId)')" onclick="" />
+        <ACTION code="delete" name="删除" loadCondition="" executeType="interface" href="javascript:doWith_f(fun.getSession(FORM),'delete','您确定要删除吗?','','id')" onclick="">
+          <INTERFACE className="com.application.support.biz.FunMgrBiz" methodName="deleteFun" />
+          <INPUTBEAN />
+          <STATEMENT />
+        </ACTION>
+      </ACTIONS>
+    </GRID>
+    <FORM>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </FORM>
+    <SCRIPT />
+  </OIS_FUN_LIST>
+  <OIS_FUN_ADD pageLocal="系统管理|权限管理" mimeType="normal" loadSearchWidget="" loadGridWidget="" loadFormWidget="true" loadScriptWidget="true">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </GRID>
+    <FORM formTitle="权限信息" loadDataSetStyle="" loadColumnSetStyle="">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.Function" resultMap="funResult">
+          <SELECT><![CDATA[select function_code,function_name,function_type,function_url,order_no from sm_t_function where id=$id$]]></SELECT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="functionCode" chineseName="权限编码" value="obj.get(functionCode)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docHref="" docOnclick="" docOnblur="javascript:checkFunCode();" />
+        <COLUMN name="functionName" chineseName="权限名称" value="obj.get(functionName)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docHref="" docOnclick="" docOnblur="javascript:checkFunName();" />
+        <COLUMN name="functionType" chineseName="权限类型" value="obj.get(functionType)" dataType="number" docType="select" docCss="" docWidth="152" docHeight="" docMaxlength="1" loadCondition="" refFormula="fun.getDict(005)" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="functionUrl" chineseName="链接地址" value="obj.get(functionUrl)" dataType="string" docType="text" docCss="" docWidth="64" docHeight="" docMaxlength="128" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" docOnclick="" docOnblur="" />
+        <COLUMN name="orderNo" chineseName="排序号" value="obj.get(orderNo)" dataType="number" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="3" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" docOnclick="" docOnblur="" />
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="add" name="保存" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==add" executeType="" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'add','您确定要保存吗?')">
+          <STATEMENT parameterClass="com.application.support.model.Function" resultMap="funResult"><![CDATA[insert into sm_t_function(id,function_parent_id,function_code,function_name,function_type,function_url,order_no) values($id$,$functionParentId$,$functionCode$,$functionName$,$functionType$,$functionUrl$,$orderNo$)]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.getUUID()" />
+            <SETBEAN name="functionParentId" value="fun.get(parentId)" />
+            <SETBEAN name="functionCode" value="fun.get(functionCode)" />
+            <SETBEAN name="functionName" value="fun.get(functionName)" />
+            <SETBEAN name="functionType" value="fun.get(functionType)" />
+            <SETBEAN name="functionUrl" value="fun.get(functionUrl)" />
+            <SETBEAN name="orderNo" value="fun.get(orderNo)" />
+          </INPUTBEAN>
+        </ACTION>
+        <ACTION code="update" name="更新" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==update" executeType="" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'update','您确定要保存吗?')">
+          <STATEMENT parameterClass="com.application.support.model.Function" resultMap="funResult"><![CDATA[update sm_t_function set function_code=$functionCode$,function_name=$functionName$,function_type=$functionType$,function_url=$functionUrl$,order_no=$orderNo$ where id=$id$]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="functionCode" value="fun.get(functionCode)" />
+            <SETBEAN name="functionName" value="fun.get(functionName)" />
+            <SETBEAN name="functionType" value="fun.get(functionType)" />
+            <SETBEAN name="functionUrl" value="fun.get(functionUrl)" />
+            <SETBEAN name="orderNo" value="fun.get(orderNo)" />
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+        </ACTION>
+        <ACTION code="close" name="关闭" freshOpener="" closeWindow="" loadCondition="" executeType="" href="" onclick="javascript:window.close();" />
+      </ACTIONS>
+    </FORM>
+    <SCRIPT><![CDATA[window.onload=function(){
+   var showType=$("#SHOW_TYPE").val();
+   var parentId=$("#parentId").val();
+   if(showType=="add"){
+     $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/getFunOrderNumber.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{parentId:parentId},
+      success:function(orderNo){
+          $("#orderNo").val(orderNo);
+      }
+     });
+   }
+}
+
+function checkFunCode(){  
+   var id=$("#id").val();
+   var funCode=$("#functionCode").val();
+   $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/checkFunCode.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{id:id,funCode:funCode},
+      success:function(msg){
+         if(msg!="成功"){
+            alert(msg);
+            $("#functionCode").focus();
+            return;
+         }
+      }
+   });
+   return true;
+}
+function checkFunName(){  
+   var id=$("#id").val();
+   var funName=$("#functionName").val();
+   $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/checkFunName.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{id:id,funName:funName},
+      success:function(msg){
+         if(msg!="成功"){
+            alert(msg);
+            $("#functionName").focus();
+            return;
+         }
+      }
+   });
+   return true;
+}]]></SCRIPT>
+  </OIS_FUN_ADD>
+</CONFIGURATION>
+

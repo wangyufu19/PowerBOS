@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIGURATION name="角色管理" createTime="2013-02-25 19:33">
+  <OIS_ROLE_LIST pageLocal="系统管理|角色管理" mimeType="normal" loadSearchWidget="true" loadGridWidget="true" loadFormWidget="" loadScriptWidget="">
+    <SEARCH searchTitle="查询条件" loadColumnSetStyle="single">
+      <COLUMNSET>
+        <COLUMN name="roleName_s" chineseName="角色名称" value="fun.get(roleName_s)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+      </COLUMNSET>
+    </SEARCH>
+    <GRID gridTitle="角色信息列表" loadDataSetStyle="" loadLinkToolbar="true" loadHandleToolbar="" loadPageToolbar="true" pageFetchSize="">
+      <DATASET>
+        <STATEMENT parameterClass="com.application.support.model.Role" returnClass="com.application.support.model.Role" resultMap="roleResult">
+          <SELECT><![CDATA[select id,role_code,role_name,role_type from sm_t_role where is_valid=1]]></SELECT>
+          <WHERES>
+            <WHERE loadCondition="fun.get(roleName_s)!="><![CDATA[role_name='$roleName$']]></WHERE>
+          </WHERES>
+          <ORDERBY />
+          <INPUTBEAN>
+            <SETBEAN name="roleName" value="fun.get(roleName_s)" />
+          </INPUTBEAN>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="id" chineseName="id" value="obj.get(id)" dataType="" docType="checkbox" docCss="" docWidth="4%" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="" docOnclick="">
+          <EDITOR editorDocType="" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="roleCode" chineseName="角色编码" value="obj.get(roleCode)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" docHref="" docOnclick="" docOnblur="" isEditor="">
+          <EDITOR docType="text" dataType="" docCss="" docMaxlength="" editorDocType="" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="roleName" chineseName="角色名称" value="obj.get(roleName)" dataType="" docType="href" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_ROLE_ADD&amp;SHOW_TYPE=update&amp;id=obj.get(id)')" docOnclick="">
+          <EDITOR docType="text" dataType="" docCss="" docMaxlength="" editorDocType="text" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="roleType" chineseName="角色类型" value="obj.get(roleType)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="fun.getDict(004)" docExtend="" isDisabled="true" isReadonly="" isNull="" isEditor="" docHref="" docOnclick="">
+          <EDITOR docType="select" dataType="" docCss="" docMaxlength="" editorDocType="select" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="event" chineseName="操作" value="设置角色权限" loadCondition="" docType="href" docWidth="" isDisabled="true" isEditor="" refFormula="" docExtend="" docHref="javascript:winopen700('set_role_preview.jsp?roleId=obj.get(id)')" docOnclick="">
+          <EDITOR editorDocType="" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="showAdd" name="新增" loadCondition="" executeType="" href="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_ROLE_ADD&amp;SHOW_TYPE=add')" onclick="">
+          <INPUTBEAN />
+          <STATEMENT />
+          <INTERFACE />
+        </ACTION>
+        <ACTION code="delete" name="删除" loadCondition="" executeType="" href="javascript:doWith_f(fun.getSession(FORM),'delete','您确定要删除吗?','','id')" onclick="">
+          <STATEMENT parameterClass="java.lang.String" resultMap="roleResult"><![CDATA[delete from sm_t_role where id=$id$]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.getArray(id)" />
+          </INPUTBEAN>
+          <INTERFACE />
+        </ACTION>
+      </ACTIONS>
+    </GRID>
+    <FORM>
+      <DATASET>
+        <STATEMENT>
+          <SELECT />
+          <INPUTBEAN />
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </FORM>
+    <SCRIPT />
+  </OIS_ROLE_LIST>
+  <OIS_ROLE_ADD pageLocal="系统管理|角色管理" mimeType="normal" loadSearchWidget="" loadGridWidget="" loadFormWidget="true" loadScriptWidget="">
+    <SEARCH />
+    <GRID>
+      <DATASET>
+        <STATEMENT>
+          <SELECT />
+          <WHERES />
+          <ORDERBY />
+          <INPUTBEAN />
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </GRID>
+    <FORM formTitle="角色信息" loadDataSetStyle="" loadColumnSetStyle="">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.Role" resultMap="roleResult">
+          <SELECT><![CDATA[select role_code,role_name,role_type from sm_t_role where id=$id$]]></SELECT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="roleCode" chineseName="角色编码" value="obj.get(roleCode)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="32" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docHref="" docOnclick="" docOnblur="javascript:checkRoleCode();" />
+        <COLUMN name="roleName" chineseName="角色名称" value="obj.get(roleName)" dataType="string" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="roleType" chineseName="角色类型" value="obj.get(roleType)" dataType="number" docType="select" docCss="" docWidth="152" docHeight="" docMaxlength="1" loadCondition="" refFormula="fun.getDict(004)" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="roleDesc" chineseName="角色描述" value="obj.get(roleDesc)" dataType="string" docType="textarea" docCss="" docWidth="" docHeight="3" docMaxlength="256" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="add" name="保存" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==add" executeType="statement" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'add','您确定要保存吗?')&#xD;&#xA;">
+          <STATEMENT parameterClass="com.application.support.model.Role" resultMap="roleResult"><![CDATA[insert into sm_t_role(id,role_code,role_name,role_type,role_desc) values($id$,$roleCode$,$roleName$,$roleType$,$roleDesc$)]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="roleCode" value="fun.get(roleCode)" />
+            <SETBEAN name="roleName" value="fun.get(roleName)" />
+            <SETBEAN name="roleType" value="fun.get(roleType)" />
+            <SETBEAN name="roleDesc" value="fun.get(roleDesc)" />
+            <SETBEAN name="id" value="fun.getUUID()" />
+          </INPUTBEAN>
+          <INTERFACE />
+        </ACTION>
+        <ACTION code="update" name="更新" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==update" executeType="statement" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'update','您确定要保存吗?')">
+          <STATEMENT parameterClass="com.application.support.model.Role" resultMap="roleResult"><![CDATA[update sm_t_role set role_code=$roleCode$,role_name=$roleName$,role_type=$roleType$,role_desc=$roleDesc$ where id=$id$]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="roleCode" value="fun.get(roleCode)" />
+            <SETBEAN name="roleName" value="fun.get(roleName)" />
+            <SETBEAN name="roleType" value="fun.get(roleType)" />
+            <SETBEAN name="roleDesc" value="fun.get(roleDesc)" />
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+          <INTERFACE />
+        </ACTION>
+        <ACTION code="close" name="关闭" freshOpener="" closeWindow="" loadCondition="" executeType="" href="" onclick="javascript:window.close();">
+          <INPUTBEAN />
+        </ACTION>
+      </ACTIONS>
+    </FORM>
+    <SCRIPT><![CDATA[function checkRoleCode(){  
+   var id=$("#id").val();
+   var roleCode=$("#roleCode").val();
+   $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/checkRoleCode.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{id:id,roleCode:roleCode},
+      success:function(msg){
+         if(msg!="成功"){
+            alert(msg);
+            $("#roleCode").focus();
+            return;
+         }
+      }
+   });
+   return true;
+}]]></SCRIPT>
+  </OIS_ROLE_ADD>
+</CONFIGURATION>
+

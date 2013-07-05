@@ -1,0 +1,92 @@
+.select,
+.combo{
+	padding:0px;
+	border:1px solid #93989C;
+	background-color:#FFFFFF;
+	width:260px;
+	height:19px;
+	line-height:19px;
+}
+.combo-button {
+	cursor:hand;
+	cursor:pointer;	
+	border:none;
+	padding:0;
+	margin:0;
+	background:transparent url(../images/btn_select_down.gif) center center no-repeat;
+	width:17px;
+	height:19px;
+	vertical-align:baseline;
+	font-size:8pt;
+	font-family:Webdings, Marlett;
+	text-indent:-9999px;
+}
+.combo-hilite {
+	cursor:			hand;
+	cursor:			pointer;
+	background:		#365CAD;
+	border:			1px dashed #41426E;
+	color:			#FFFFFF;
+	line-height:20px;
+	text-indent:2px;
+}
+.combo-item   {
+	cursor:			hand;
+	cursor:			pointer;
+	background:		white;
+	border:			1px solid white;
+	color:			#666666;
+	line-height:20px;
+	text-indent:2px;
+}
+
+.combo-input  {
+	/*
+	padding:0;
+	margin:0;
+	border:			none !important;
+	width:			138px !important;
+	color:			#666666;
+	height:19px;
+	line-height:19px;
+	text-indent:2px;
+	*/
+	background:#FFFFFF;
+	color:#666666;
+	border:1px solid #7F9DB9;
+	padding:1px;
+	line-height:16px;
+	height:16px;
+}
+
+.combo-list table{
+	table-layout:	fixed;
+	width:			100%;
+	border:0;
+}
+
+.combo-list {
+	border:				1px solid black;
+	background:			#A5A8D1;
+	padding:			0;
+	width:  			260px !important;
+	position:absolute;
+	margin-left:-159px;
+	margin-top:21px;
+
+	
+	/* enable this if you want scroll bars
+	height:				200px;
+	overflow:			auto;
+	overflow-x:			visible;
+	overflow-y:			auto;
+	scrollbar-base-color:		rgb(234,242,255);
+	scrollbar-highlight-color:	rgb(234,242,255);
+	scrollbar-3dlight-color:	rgb(120,172,255);
+	scrollbar-darkshadow-color:	rgb(120,172,255);
+	scrollbar-shadow-color:		rgb(234,242,255);
+	scrollbar-face-color:		rgb(234,242,255);
+	scrollbar-track-color:		white;
+	scrollbar-arrow-color:		black;
+	*/
+}

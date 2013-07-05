@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configuration>
+  <plugins>
+    <plugin name="dataDictPlugin" class="com.application.support.plugin.DataDictPlugin" desc="加载数据字典插件类d" />
+  </plugins>
+</configuration>
+

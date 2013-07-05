@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="GB2312"?>
+<metadata>
+  <alias name="function" class="com.application.support.model.Function"></alias>
+  <sqlMap>
+    <resultMap name="funResult"  table="sm_t_function">
+      <id name="id" type="java.lang.String">
+        <column name="ID" length="128" key="uuid" />
+      </id>
+      <property name="functionParentId" type="java.lang.String">
+        <column name="FUNCTION_PARENT_ID" length="128"/>
+      </property> 
+      <property name="functionCode" type="java.lang.String">
+        <column name="FUNCTION_CODE" length="64"/>
+      </property>
+      <property name="functionName" type="java.lang.String">
+        <column name="FUNCTION_NAME" length="64"/>
+      </property>
+      <property name="functionType" type="java.lang.Long">
+        <column name="FUNCTION_TYPE" length="1" scale="0"/>
+      </property>
+      <property name="functionUrl" type="java.lang.String">
+        <column name="FUNCTION_URL" length="64"/>
+      </property>        
+      <property name="orderNo" type="java.lang.Long">
+        <column name="ORDER_NO" length="2" scale="0"/>
+      </property>   
+      <property name="createUserId" type="java.lang.String">
+        <column name="CREATE_USER_ID" length="128"/>
+      </property>
+      <property name="createDate" type="java.util.Date">
+        <column name="CREATE_DATE" length="7" default="sysdate" />
+      </property>
+      <property name="updateUserId" type="java.lang.String">
+        <column name="UPDATE_USER_ID" length="128"/>
+      </property>
+      <property name="updateDate" type="java.util.Date">
+        <column name="UPDATE_DATE" length="7" default="sysdate" />
+      </property>
+      <property name="isleaf" type="java.lang.String">
+        <column name="ISLEAF" length="32" />
+      </property>
+      <property name="checked" type="java.lang.String">
+        <column name="CHECKED" length="32" />
+      </property>   
+    </resultMap>    
+  </sqlMap>
+</metadata>
+

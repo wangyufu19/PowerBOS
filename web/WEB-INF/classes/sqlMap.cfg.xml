@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>  	
+  	<!-- 
+  	  identifer         : 数据库连接标识符（非默认连接必须配置）
+  	  connection-type   : 数据源连接类型（JDBC/JNDI），必须配置
+  	  default           : 是否为默认数据源(true/false),只能有一个默认数据源配置
+  	 -->
+    <datasources>
+        <!--通过JNDI连接数据库-->
+    	<datasource identifer="datasource1" connection-type="jndi" is-default="false">
+    		<property name="jndi_name" value="java:comp/env/powerbos"/>
+    		<property name="dialect" value="oracle"/>
+		  	<property name="dialect_version" value="10g"/>
+		 	<property name="show_sql" value="true"/>
+		 	<property name="sql_log" value="true"/>
+    	</datasource>
+    	<!--通过JDBC连接数据库-->
+    	<datasource identifer="datasource2" connection-type="jdbc" is-default="true">    	  
+    	    <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+		 	<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl"/>
+		 	<property name="username" value="powerbos"/>
+		 	<property name="password" value="123456"/> 		 
+		 	<property name="dialect" value="oracle"/>
+		  	<property name="dialect_version" value="10g"/>
+		 	<property name="show_sql" value="true"/>
+		 	<property name="sql_log" value="true"/>		 	
+		 	<!--数据库连接池-->		 	
+ 			<property name="connection_pool_provider_class" value="com.sqlMap.jdbc.ConnectionProvider"/>
+		 	<property name="connection_pool_min_connections" value="15"/>
+		 	<property name="connection_pool_max_connections" value="25"/>			
+		 	<property name="orm_provider" value="hibernate"/> 		
+    	</datasource>
+    	<!--数据缓存配置-->	
+    	<cache>
+    		<property name="cache_provider_class" value="com.sqlMap.cache.CacheProvider"/>
+			<property name="cache_always" value="true"/>
+			<property name="cache_max_elements" value="10000"/>			 	
+			<property name="cache_free_seconds" value="300"/>	
+    	</cache>		
+    </datasources>  
+    
+  	<!--元素数据配置 -->
+  	<metadatas>  		
+	  	<metadata resource="conf/sqlmap/sm_t_org.xml"/>
+		<metadata resource="conf/sqlmap/sm_t_user.xml"/>
+		<metadata resource="conf/sqlmap/sm_t_user_role.xml"/>
+		<metadata resource="conf/sqlmap/sm_t_user_login.xml"/>
+		<metadata resource="conf/sqlmap/sm_t_role.xml"/>
+		<metadata resource="conf/sqlmap/sm_t_function.xml"/>
+		<metadata resource="conf/sqlmap/sm_t_role_function.xml"/>  
+		<metadata resource="conf/sqlmap/sm_t_data_dict.xml"/>  	
+		<metadata resource="conf/sqlmap/sm_t_db_log.xml"/>
+  	</metadatas>  
+</configuration>

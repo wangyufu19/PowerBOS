@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGURATION>
+  <OIS_CHANGE_PASSWORD pageLocal="我的事务|修改密码" mimeType="normal" loadSearchWidget="" loadGridWidget="" loadFormWidget="true" loadScriptWidget="">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID>
+      <DATASET>
+        <STATEMENT>
+          <SELECT />
+          <WHERES />
+          <ORDERBY />
+          <INPUTBEAN />
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </GRID>
+    <FORM formTitle="修改密码" loadDataSetStyle="" loadColumnSetStyle="">
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="userName" chineseName="用户名称" value="fun.getSession(USERNAME)" dataType="" docType="hidden" docCss="" docWidth="" docHeight="" docMaxlength="" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="" />
+        <COLUMN name="oldPassword" chineseName="旧密码" value="" dataType="string" docType="password" docCss="input" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docHref="" docOnclick="" docOnblur="javascript:checkOldPwd();" />
+        <COLUMN name="newPassword" chineseName="新密码" value="" dataType="string" docType="password" docCss="input" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="密码为6-20个字母或数字,必须以字母开头" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="confirmNewPassword" chineseName="确认新密码" value="" dataType="string" docType="password" docCss="input" docWidth="" docHeight="" docMaxlength="64" loadCondition="" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="update" name="更新" freshOpener="" closeWindow="" loadCondition="" executeType="" href="" onclick="javascript:update_f(fun.getSession(FORM),'update','您确定要更新吗?')">
+          <STATEMENT parameterClass="com.application.support.model.User" resultMap="userResult"><![CDATA[update sm_t_user set login_pwd=$loginPwd$ where id=$id$]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="loginPwd" value="fun.md5(fun.get(newPassword))" />
+            <SETBEAN name="id" value="fun.getSession(USERID)" />
+          </INPUTBEAN>
+        </ACTION>
+        <ACTION code="reset" name="重置" freshOpener="" closeWindow="" loadCondition="" executeType="" href="" onclick="javascript:fun.getSession(FORM).reset();" />
+      </ACTIONS>
+    </FORM>
+    <SCRIPT><![CDATA[function checkOldPwd(){  
+   var id="fun.getSession(USERID)";   
+   var oldPwd=document.getElementById("oldPassword").value;
+   buffalo.remoteCall("userMgrAjax.checkOldPwd", [id,oldPwd], getCheckOldPwd);   
+}
+function getCheckOldPwd(reply){
+  var result = reply.getResult();  
+  if(result!="成功"){   
+    alert(result);	 
+    fun.getSession(FORM).oldPassword.focus();
+    return;
+  }
+}
+function update_f(form,action,msg){    
+    if(!check_f(form)) return;
+    var v1=document.getElementById("newPassword");
+    var v2=document.getElementById("confirmNewPassword");   
+    if(typeof(v1)!="undefined"){
+       var pattern = /^[a-zA-Z][a-zA-Z0-9_]{5,18}$/;
+       flag = pattern.test(v1.value);
+       if(!flag) {
+	alert("密码为6-20个字母或数字,必须以字母开头");
+	v1.focus();
+	return;
+       }
+    } 
+    if(typeof(v1)!="undefined"&&typeof(v2)!="undefined"){
+       if(v1.value!=v2.value){
+         alert("新密码两次输入不同,请重新输入");
+         return;
+       }
+    }
+    doWith_f(form,action,msg);
+}]]></SCRIPT>
+  </OIS_CHANGE_PASSWORD>
+</CONFIGURATION>
+

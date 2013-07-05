@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GB2312"?>
+<metadata>
+  <alias name="userRole" class="com.application.support.model.UserRole"></alias>
+  <sqlMap>
+    <resultMap name="userRoleResult"  table="sm_t_user_role">
+      <id name="id" type="java.lang.String">
+         <column name="ID" length="128" key="uuid"/>                             
+      </id> 
+      <property name="userId" type="java.lang.String">
+        <column name="USER_ID" length="128"/>
+      </property>
+      <property name="roleId" type="java.lang.String">
+        <column name="ROLE_ID" length="128"/>
+      </property>   
+      <property name="createUserId" type="java.lang.String">
+        <column name="CREATE_USER_ID" length="128"/>
+      </property>
+      <property name="createDate" type="java.util.Date">
+        <column name="CREATE_DATE" length="7" default="sysdate" />
+      </property>
+      <property name="updateUserId" type="java.lang.String">
+        <column name="UPDATE_USER_ID" length="128"/>
+      </property>
+      <property name="updateDate" type="java.util.Date">
+        <column name="UPDATE_DATE" length="7" default="sysdate" />
+      </property>
+    </resultMap>
+  </sqlMap>
+</metadata>
+

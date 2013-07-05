@@ -1,0 +1,68 @@
+/*====================================================================
+Title : Global.css
+Author : wyf 
+URL : 
+Description : For all pages
+Created : 2008-07-25
+Modified : 
+====================================================================*/
+
+body
+{
+	margin:0;
+	padding:0;
+	color:#000;
+	font-size:12px;
+	font-family:arial,verdana,sans-serif;
+	text-align:left;
+	overflow:auto;
+}
+img{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+td
+{
+	font-size:12px;
+}
+dl,
+dt,
+dd,
+ul,
+li,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p{
+	margin:0;
+	padding:0;
+}
+dl,
+dd,
+dt,
+ul,
+li{
+	list-style-type:none;
+	list-style-image:url();
+}
+textarea,
+select,
+option
+{
+	margin:1px 0;
+	background: transparent;
+}
+a:link, a:visited{
+	color:#666666;
+	text-decoration:underline;
+}
+a:hover{
+	color:#FF6600;
+	text-decoration:underline;
+}

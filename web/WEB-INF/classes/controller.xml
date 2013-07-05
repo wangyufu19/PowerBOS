@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>     
+   <include resource="conf/controller/console-configuration.xml"/>
+   <include resource="conf/controller/support-configuration.xml"/> 
+   <constant name="controller.encoding" value="utf-8"/>
+   <constant name="controller.pagesize" value="8"/>
+   <constant name="controller.request.processor" value="com.powerbos.framework.web.controller.DelegatingRequestProcessor"/>
+</configuration>

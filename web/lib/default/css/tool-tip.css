@@ -1,0 +1,6 @@
+#dhtmltooltip {
+	BORDER-RIGHT: #dddddd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 10px; Z-INDEX: 100; FILTER: progid:DXImageTransform.Microsoft.Shadow(color=#eeeeee,direction=135); LEFT: -300px; VISIBILITY: hidden; PADDING-BOTTOM: 2px; BORDER-LEFT: #dddddd 1px solid; WIDTH: 150px; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #dddddd 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; POSITION: absolute; BACKGROUND-COLOR: lightyellow; TEXT-DECORATION: none
+}
+#dhtmlpointer {
+	Z-INDEX: 101; LEFT: -300px; VISIBILITY: hidden; POSITION: absolute
+}

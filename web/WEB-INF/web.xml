@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>    
+	<display-name></display-name> 
+	
+	<filter>
+	  <filter-name>SysFilter</filter-name>
+	  <filter-class>com.framework.common.servlet.filter.SysFilter</filter-class>
+	</filter>
+	<filter>
+	  <filter-name>ConsoleFilter</filter-name>
+	  <filter-class>com.framework.common.servlet.filter.ConsoleFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	  <filter-name>SysFilter</filter-name>
+	  <url-pattern>/jsp/support/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	  <filter-name>ConsoleFilter</filter-name>
+	  <url-pattern>/jsp/console/*</url-pattern>
+	</filter-mapping> 
+	
+	<!--ActionController
+	<servlet>
+	  <servlet-name>ActionDispatcher</servlet-name>
+	  <servlet-class>com.controller.action.ActionController</servlet-class>    
+	  <load-on-startup>0</load-on-startup>
+	</servlet>  
+	<servlet-mapping>
+	  <servlet-name>ActionDispatcher</servlet-name>
+	  <url-pattern>*.action</url-pattern>
+	</servlet-mapping>-->
+	<!--ApplicationContext-->
+	<servlet>
+	  <servlet-name>ApplicationContext</servlet-name>
+	  <servlet-class>com.powerbos.framework.web.servlet.ApplicationContextServlet</servlet-class>    
+	  <load-on-startup>0</load-on-startup>
+	</servlet>  
+	<servlet-mapping>
+	  <servlet-name>ApplicationContext</servlet-name>
+	  <url-pattern>*.action</url-pattern>
+	</servlet-mapping>
+	<!--System Servlet-->
+	<servlet>
+	  <servlet-name>SysServlet</servlet-name>
+	  <servlet-class>com.framework.common.servlet.SysServlet</servlet-class>
+	  <load-on-startup>1</load-on-startup>
+	</servlet>  
+	<servlet-mapping>
+	  <servlet-name>SysServlet</servlet-name>
+	  <url-pattern>/SysServlet/*</url-pattern>
+	</servlet-mapping> 
+	
+	
+	
+	<welcome-file-list>
+	  <welcome-file>index.html</welcome-file>
+	  <welcome-file>index.htm</welcome-file>
+	  <welcome-file>index.jsp</welcome-file>
+	  <welcome-file>default.html</welcome-file>
+	  <welcome-file>default.jsp</welcome-file>
+	  <welcome-file>index.jws</welcome-file>
+	</welcome-file-list>
+  
+	<error-page>
+		<error-code>404</error-code> 
+		<location>/404.jsp</location> 
+	</error-page> 
+	<error-page>
+		<error-code>403</error-code> 
+		<location>/403.jsp</location> 
+	</error-page>
+	<error-page>
+		<error-code>500</error-code> 
+		<location>/500.jsp</location> 
+	</error-page>
+
+	<jsp-config>  
+	  <taglib>
+	    <taglib-uri>controller.tld</taglib-uri>
+	    <taglib-location>/WEB-INF/tld/controller.tld</taglib-location>
+	  </taglib>
+	</jsp-config>
+</web-app>
+

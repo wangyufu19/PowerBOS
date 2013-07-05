@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="GB2312"?>
+<CONFIGURATION name="字典管理" createTime="2013-02-25 19:33">
+  <OIS_DICT_LIST pageLocal="系统管理|字典管理" mimeType="normal" loadSearchWidget="" loadGridWidget="true" loadFormWidget="" loadScriptWidget="">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID gridTitle="字典信息列表" loadDataSetStyle="" loadLinkToolbar="true" loadHandleToolbar="" loadPageToolbar="" pageFetchSize="">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.DataDict" resultMap="dataDictResult">
+          <SELECT><![CDATA[select id,dict_code,dict_name,order_no from sm_t_data_dict where dict_parent_id=$dictParentId$ and is_valid=1]]></SELECT>
+          <ORDERBY><![CDATA[order by order_no]]></ORDERBY>
+          <INPUTBEAN>
+            <SETBEAN name="dictParentId" value="fun.get(parentId)" />
+          </INPUTBEAN>
+          <WHERES />
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="id" chineseName="" value="obj.get(id)" dataType="" loadCondition="" docType="checkbox" isDisabled="true" isEditor="" refFormula="" docExtend="" docHref="" docOnclick="" docWidth="10%">
+          <EDITOR editorDocType="" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="dictCode" chineseName="字典编码" value="obj.get(dictCode)" dataType="" loadCondition="" docType="hidden" isDisabled="true" isEditor="true" refFormula="" docExtend="" docHref="" docOnclick="" docWidth="30%">
+          <EDITOR editorDocType="text" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="dictName" chineseName="字典名称" value="obj.get(dictName)" dataType="" loadCondition="" docType="hidden" isDisabled="true" isEditor="true" refFormula="" docExtend="" docHref="" docOnclick="" docWidth="30%">
+          <EDITOR editorDocType="text" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+        <COLUMN name="orderNo" chineseName="排序号" value="obj.get(orderNo)" dataType="" loadCondition="" docType="hidden" isDisabled="true" isEditor="" refFormula="" docExtend="" docHref="" docOnclick="" docWidth="30%">
+          <EDITOR editorDocType="" editorDataType="" editorDocCss="" editorRefFormula="" />
+        </COLUMN>
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="save" name="保存" loadCondition="" executeType="interface" href="javascript:doWith_f(fun.getSession(FORM),'save','您确定要保存吗?')" onclick="">
+          <INTERFACE className="com.application.support.plugin.DictMgrPi" methodName="saveDict" />
+          <INPUTBEAN />
+          <STATEMENT />
+        </ACTION>
+        <ACTION code="showAdd" name="新增" loadCondition="" executeType="" href="javascript:winopen700('fun.getSession(DYNPAGE)?CODE=OIS_DICT_ADD&amp;SHOW_TYPE=add&amp;parentId=fun.get(parentId)')" onclick="" />
+        <ACTION code="delete" name="删除" loadCondition="" executeType="interface" href="javascript:doWith_f(fun.getSession(FORM),'delete','您确定要删除吗?','','id')" onclick="">
+          <INTERFACE className="com.application.support.plugin.DictMgrPi" methodName="deleteDict" />
+          <STATEMENT />
+          <INPUTBEAN />
+        </ACTION>
+      </ACTIONS>
+    </GRID>
+    <FORM>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </FORM>
+    <SCRIPT />
+  </OIS_DICT_LIST>
+  <OIS_DICT_ADD pageLocal="系统管理|字典管理" mimeType="normal" loadSearchWidget="" loadGridWidget="" loadFormWidget="true" loadScriptWidget="">
+    <SEARCH>
+      <COLUMNSET />
+    </SEARCH>
+    <GRID>
+      <DATASET>
+        <STATEMENT />
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET />
+      <ACTIONS />
+    </GRID>
+    <FORM formTitle="字典信息" loadDataSetStyle="" loadColumnSetStyle="">
+      <DATASET>
+        <STATEMENT parameterClass="java.lang.String" returnClass="com.application.support.model.DataDict" resultMap="dataDictResult">
+          <SELECT><![CDATA[select dict_code,dict_name,order_no from sm_t_data_dict where id=$id$]]></SELECT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+        </STATEMENT>
+        <INTERFACE />
+      </DATASET>
+      <COLUMNSET>
+        <COLUMN name="dictCode" chineseName="字典编码" value="obj.get(dictCode)" dataType="string" loadCondition="" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="64" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" docOnclick="" docOnblur="javascript:checkDictCode();" />
+        <COLUMN name="dictName" chineseName="字典名称" value="obj.get(dictName)" dataType="string" loadCondition="" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="128" refFormula="" docExtend="" isDisabled="true" isReadonly="" isNull="true" />
+        <COLUMN name="orderNo" chineseName="排序号" value="obj.get(orderNo)" dataType="number" loadCondition="" docType="text" docCss="" docWidth="" docHeight="" docMaxlength="1" refFormula="" docExtend="" isDisabled="true" isReadonly="true" isNull="" />
+      </COLUMNSET>
+      <ACTIONS>
+        <ACTION code="add" name="保存" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==add" executeType="" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'add','您确定要保存吗?')">
+          <STATEMENT parameterClass="com.application.support.model.DataDict" resultMap="dataDictResult"><![CDATA[insert into sm_t_data_dict(id,dict_parent_id,dict_code,dict_name,order_no) values($id$,$dictParentId$,$dictCode$,$dictName$,$orderNo$)]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="id" value="fun.getUUID()" />
+            <SETBEAN name="dictParentId" value="fun.get(parentId)" />
+            <SETBEAN name="dictCode" value="fun.get(dictCode)" />
+            <SETBEAN name="dictName" value="fun.get(dictName)" />
+            <SETBEAN name="orderNo" value="fun.get(orderNo)" />
+          </INPUTBEAN>
+        </ACTION>
+        <ACTION code="update" name="更新" freshOpener="true" closeWindow="true" loadCondition="fun.get(SHOW_TYPE)==update" executeType="" href="" onclick="javascript:doWith_f(fun.getSession(FORM),'update','您确定要保存吗?')">
+          <STATEMENT parameterClass="com.application.support.model.DataDict" resultMap="dataDictResult"><![CDATA[update sm_t_data_dict set dict_code=$dictCode$,dict_name=$dictName$ where id=$id$]]></STATEMENT>
+          <INPUTBEAN>
+            <SETBEAN name="dictCode" value="fun.get(dictCode)" />
+            <SETBEAN name="dictName" value="fun.get(dictName)" />
+            <SETBEAN name="id" value="fun.get(id)" />
+          </INPUTBEAN>
+        </ACTION>
+        <ACTION code="close" name="关闭" freshOpener="" closeWindow="" loadCondition="" executeType="" href="" onclick="javascript:window.close();">
+          <STATEMENT />
+          <INPUTBEAN />
+          <INTERFACE />
+        </ACTION>
+      </ACTIONS>
+    </FORM>
+    <SCRIPT><![CDATA[window.onload=function(){
+   var showType=$("#SHOW_TYPE").val();
+   var parentId=$("#parentId").val();
+   if(showType=="add"){
+     $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/getDictOrderNumber.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{parentId:parentId},
+      success:function(orderNo){
+         $("#orderNo").val(orderNo);
+      }
+     });
+   }
+}
+
+function checkDictCode(){  
+   var id=$("#id").val();
+   var parentId=$("#parentId").val();
+   var dictCode=$("#dictCode").val();
+   $.ajax({
+      type:"post",
+      url:"fun.getSession(PATH)/jsp/support/checkDictCode.action",
+      contentType:"application/x-www-form-urlencoded; charset=utf-8",
+      data:{id:id,parentId:parentId,dictCode:dictCode},
+      success:function(msg){
+         if(msg!="成功"){
+            alert(msg);
+            $("#dictCode").focus();
+            return;
+         }
+      }
+   });
+   return true;   
+}]]></SCRIPT>
+  </OIS_DICT_ADD>
+</CONFIGURATION>
+
